@@ -1,0 +1,1389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coastal Sports Championship — Tamil Nadu & Puducherry</title>
+<meta name="description" content="A championship built for India's fishing-community youth — six sports, three age categories, spanning 608 villages across Tamil Nadu &amp; Puducherry.">
+
+<!-- Favicon / browser tab icon -->
+<link rel="icon" type="image/jpeg" href="images/logo.jpg">
+<link rel="apple-touch-icon" href="images/logo.jpg">
+
+<!-- Link preview thumbnail (WhatsApp, iMessage, Slack, social shares) -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Coastal Sports Championship — Tamil Nadu &amp; Puducherry">
+<meta property="og:description" content="A championship built for India's fishing-community youth — six sports, three age categories, spanning 608 villages across Tamil Nadu &amp; Puducherry.">
+<meta property="og:image" content="images/logo.jpg">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Coastal Sports Championship — Tamil Nadu &amp; Puducherry">
+<meta name="twitter:description" content="A championship built for India's fishing-community youth — six sports, three age categories, spanning 608 villages across Tamil Nadu &amp; Puducherry.">
+<meta name="twitter:image" content="images/logo.jpg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#0B2A43;
+    --navy-2:#123655;
+    --ink-black:#081420;
+    --teal:#09B1EC;
+    --gold:#E7A23A;
+    --coral:#C1502F;
+    --sand:#F5EFDF;
+    --sand-2:#EBE0C4;
+    --ink:#16242F;
+    --white:#FFFFFF;
+    --line: rgba(11,42,67,0.14);
+    --radius: 16px;
+    --radius-sm: 10px;
+    --pill: 999px;
+    --accent-font: 'Fraunces', serif;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+  body{
+    margin:0;
+    background:var(--sand);
+    color:var(--ink);
+    font-family:'Work Sans', sans-serif;
+    font-weight:400;
+    line-height:1.55;
+  }
+  h1,h2,h3,.display{
+    font-family:'Anton', sans-serif;
+    font-weight:400;
+    letter-spacing:0.01em;
+    line-height:1.02;
+    margin:0;
+    color:var(--navy);
+  }
+  a{color:inherit;}
+  img,svg{display:block; max-width:100%;}
+  button{font-family:inherit; cursor:pointer;}
+  .hidden{display:none !important;}
+  :focus-visible{outline:3px solid var(--gold); outline-offset:2px;}
+
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+
+  /* ---------- NAV ---------- */
+  .site-nav{
+    position:sticky; top:0; z-index:50;
+    background:transparent;
+    border-bottom:1px solid transparent;
+    transition:background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  .site-nav.scrolled{
+    background:rgba(8,20,32,0.88);
+    backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px);
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .site-nav .wrap{
+    display:flex; align-items:center; justify-content:space-between;
+    padding-top:18px; padding-bottom:18px;
+    gap:20px;
+  }
+  .brand{
+    display:flex; align-items:center; gap:10px;
+    color:var(--white);
+    font-family:'Anton', sans-serif;
+    font-size:1.05rem;
+    letter-spacing:0.02em;
+    white-space:nowrap;
+  }
+  .brand .mark{
+    width:38px; height:38px; border-radius:8px;
+    background:var(--white); object-fit:cover;
+    flex:none; padding:2px;
+    opacity:0.16; filter:grayscale(1);
+    transform:scale(0.9);
+    transition:opacity 0.45s ease, filter 0.45s ease, transform 0.45s ease;
+  }
+  .site-nav.scrolled .brand .mark{
+    opacity:1; filter:grayscale(0); transform:scale(1);
+  }
+  .brand small{
+    display:block; font-family:'Work Sans',sans-serif; font-weight:500;
+    font-size:0.62rem; letter-spacing:0.06em; color:var(--gold); margin-top:2px;
+  }
+  .nav-links{
+    display:flex; align-items:center; gap:26px; flex-wrap:wrap;
+  }
+  .link-btn{
+    background:none; border:none; font:inherit; cursor:pointer;
+  }
+  .nav-links button.link-btn{
+    background:none; border:none; color:rgba(255,255,255,0.82);
+    font-size:0.92rem; font-weight:500; padding:6px 2px; border-bottom:2px solid transparent;
+  }
+  .nav-links button.link-btn:hover{color:var(--white); border-bottom-color:var(--teal);}
+  .btn{
+    display:inline-flex; align-items:center; justify-content:center; gap:8px;
+    padding:14px 26px; border-radius:var(--pill); border:none;
+    font-weight:700; font-size:0.95rem; text-decoration:none;
+    transition:transform 0.12s ease, box-shadow 0.12s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-gold{background:var(--gold); color:var(--navy);}
+  .btn-gold:hover{box-shadow:0 10px 24px rgba(231,162,58,0.4);}
+  .btn-outline{background:transparent; color:var(--white); border:1.5px solid rgba(255,255,255,0.55);}
+  .btn-outline:hover{border-color:var(--white); background:rgba(255,255,255,0.08);}
+  .btn-navy{background:var(--ink-black); color:var(--white);}
+  .btn-navy:hover{box-shadow:0 10px 24px rgba(8,20,32,0.35);}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background-image:
+      linear-gradient(180deg, rgba(6,20,33,0.42) 0%, rgba(6,20,33,0.18) 38%, rgba(6,20,33,0.62) 78%, rgba(6,20,33,0.92) 100%),
+      url('images/hero-marina-aerial.jpg');
+    background-position:center, center 68%;
+    background-size:100% 100%, 112% auto;
+    color:var(--white);
+    position:relative;
+    margin-top:-78px;
+    padding:150px 0 0;
+    overflow:hidden;
+    min-height:680px;
+  }
+  .hero::before{
+    content:''; position:absolute; inset:0; z-index:1; pointer-events:none;
+    background:linear-gradient(100deg, rgba(6,26,42,0.86) 0%, rgba(6,26,42,0.5) 42%, rgba(6,26,42,0.1) 68%);
+  }
+  .hero-scene{position:absolute; inset:0; z-index:0; overflow:hidden; pointer-events:none;}
+  .hero .wrap{
+    position:relative; z-index:2;
+    max-width:760px;
+    padding-bottom:118px;
+  }
+  .hero-logo{
+    width:84px; height:84px; border-radius:14px; background:var(--white);
+    padding:5px; object-fit:cover; margin-bottom:26px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.3);
+  }
+  .hero-eyebrow{
+    color:var(--gold); font-weight:700; font-size:0.8rem; letter-spacing:0.08em; margin-bottom:16px;
+    text-transform:uppercase;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 5.6vw, 4.4rem);
+    color:var(--white);
+    text-shadow:0 2px 24px rgba(0,0,0,0.4);
+  }
+  .hero h1 span{color:var(--gold);}
+  .accent-italic{
+    font-family:var(--accent-font); font-style:italic; font-weight:500;
+    letter-spacing:0.002em;
+  }
+  .hero .sub{
+    margin-top:18px; font-size:1.15rem; color:rgba(255,255,255,0.92); max-width:44ch;
+    text-shadow:0 1px 12px rgba(0,0,0,0.35);
+  }
+  .hero .theme-line{
+    margin-top:24px; font-family:var(--accent-font); font-style:italic; font-weight:500;
+    font-size:1.3rem; line-height:1.3;
+    color:var(--sand); border-left:3px solid var(--gold); padding-left:16px;
+  }
+  .hero-ctas{margin-top:36px; display:flex; gap:14px; flex-wrap:wrap;}
+
+  /* Floating stat panel — breaks out of the hero photo's bottom edge */
+  .hero-badge-wrap{position:relative; z-index:6;}
+  .hero-badge-wrap .wrap{margin-top:-84px;}
+  .hero-badge{
+    background:rgba(255,255,255,0.98); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
+    border-radius:var(--radius); padding:6px;
+    box-shadow:0 26px 60px rgba(6,20,33,0.32);
+    display:flex; max-width:640px;
+  }
+  .hero-badge .row{
+    flex:1; display:flex; flex-direction:column-reverse; align-items:center; gap:4px;
+    padding:24px 10px; text-align:center; border-right:1px solid var(--line);
+  }
+  .hero-badge .row:last-child{border-right:none;}
+  .hero-badge .num{font-family:'Anton',sans-serif; font-size:2.1rem; color:var(--navy);}
+  .hero-badge .lbl{font-size:0.76rem; color:#5a6b76; font-weight:600;}
+  .wave{display:block; width:100%; height:auto; margin-bottom:-2px;}
+
+  /* ---------- SECTION shells ---------- */
+  section{padding:76px 0;}
+  .section-head{max-width:640px; margin-bottom:44px;}
+  .section-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);}
+  .section-head p{margin-top:12px; font-size:1.05rem; color:#3c4c58;}
+  .section-tag{
+    display:inline-block; font-weight:700; font-size:0.78rem; letter-spacing:0.04em;
+    color:var(--teal); margin-bottom:10px;
+  }
+
+  /* ---------- OBJECTIVES ---------- */
+  .objectives{background:var(--white);}
+  .obj-layout{display:grid; grid-template-columns:0.95fr 1.05fr; gap:64px; align-items:center;}
+  .obj-photo{position:relative;}
+  .obj-photo .frame{
+    border-radius:var(--radius); overflow:hidden;
+    box-shadow:0 30px 60px rgba(11,42,67,0.18);
+  }
+  .obj-photo img{width:100%; height:520px; object-fit:cover; display:block;}
+  .obj-photo .cap{
+    position:absolute; left:-18px; bottom:-18px; background:var(--white);
+    border-radius:var(--radius-sm); padding:14px 18px; box-shadow:0 16px 36px rgba(11,42,67,0.16);
+    font-size:0.82rem; font-weight:600; color:var(--navy); max-width:220px;
+  }
+  .obj-photo .cap span{display:block; font-family:var(--accent-font); font-style:italic; font-weight:500; color:var(--teal); font-size:0.95rem;}
+  .obj-grid{display:flex; flex-direction:column; gap:0;}
+  .obj-card{
+    display:flex; gap:20px; padding:22px 0;
+    border-top:1px solid var(--line);
+  }
+  .obj-card:last-child{border-bottom:1px solid var(--line);}
+  .obj-card .n{
+    font-family:var(--accent-font); font-style:italic; font-weight:500;
+    font-size:1.8rem; color:var(--teal); flex:none; width:44px;
+  }
+  .obj-card h3{font-size:1.1rem; margin-bottom:6px;}
+  .obj-card p{margin:0; font-size:0.95rem; color:#41535f;}
+
+  /* ---------- EVENTS ---------- */
+  .events-group-label{
+    font-family:'Anton',sans-serif; font-size:1.1rem; color:var(--navy);
+    margin:0 0 18px; display:flex; align-items:center; gap:10px;
+  }
+  .events-group-label .count{
+    background:var(--navy); color:var(--white); font-family:'Work Sans',sans-serif;
+    font-weight:700; font-size:0.75rem; border-radius:20px; padding:3px 10px;
+  }
+  .events-banner{
+    position:relative; border-radius:var(--radius); overflow:hidden;
+    margin-bottom:52px; height:280px;
+  }
+  .events-banner img{width:100%; height:100%; object-fit:cover; object-position:center 30%;}
+  .events-banner::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(100deg, rgba(6,20,33,0.82) 0%, rgba(6,20,33,0.35) 48%, rgba(6,20,33,0.05) 75%);
+  }
+  .events-banner .cap{
+    position:absolute; left:36px; bottom:32px; z-index:2; color:var(--white); max-width:420px;
+  }
+  .events-banner .cap .tag{color:var(--gold); font-weight:700; font-size:0.78rem; letter-spacing:0.06em; margin-bottom:8px; display:block;}
+  .events-banner .cap h3{color:var(--white); font-size:1.6rem; font-family:var(--accent-font); font-style:italic; font-weight:500;}
+
+  .event-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-bottom:48px;}
+  .event-card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius);
+    padding:26px; display:flex; flex-direction:column; gap:14px;
+  }
+  .icon-badge{
+    width:52px; height:52px; border-radius:50%; flex:none;
+    display:flex; align-items:center; justify-content:center;
+    font-family:'Anton',sans-serif; font-size:1.15rem; color:var(--white);
+    letter-spacing:0.01em;
+  }
+  .icon-badge.c-teal{background:var(--teal);}
+  .icon-badge.c-gold{background:var(--gold); color:var(--navy);}
+  .icon-badge.c-navy{background:var(--navy);}
+  .icon-badge.c-coral{background:var(--coral);}
+  .event-card h3{font-size:1.2rem;}
+  .event-card p{margin:0; font-size:0.92rem; color:#43545f; flex-grow:1;}
+  .chip-row{display:flex; flex-wrap:wrap; gap:6px; margin-top:4px;}
+  .chip{
+    font-size:0.72rem; font-weight:600; padding:4px 10px; border-radius:var(--pill);
+    background:var(--sand-2); color:var(--navy); border:1px solid var(--line);
+  }
+
+  /* Team & individual event cards carry a photo of the sport itself.
+     The photo lives in its own absolutely-positioned layer sized with
+     background-size:cover, so it always fills the card edge-to-edge
+     regardless of the source image's aspect ratio — a fixed percentage
+     (the old approach) could leave gaps on landscape sources in a
+     portrait-ish card. */
+  .event-card.photo, .open-banner.photo{
+    position:relative; overflow:hidden; border:none; color:var(--white);
+    justify-content:space-between; min-height:360px;
+    transition:transform 0.22s ease, box-shadow 0.22s ease;
+  }
+  .ec-photo-layer{
+    position:absolute; inset:0; z-index:0;
+    background-size:cover; background-position:center; background-repeat:no-repeat;
+    transition:transform 0.5s ease;
+  }
+  .event-card.photo:hover .ec-photo-layer, .open-banner.photo:hover .ec-photo-layer{transform:scale(1.08);}
+  .event-card.photo::before, .open-banner.photo::before{
+    content:''; position:absolute; inset:0; z-index:1;
+    background:linear-gradient(180deg, rgba(6,20,33,0.1) 0%, rgba(6,20,33,0.25) 42%, rgba(6,20,33,0.94) 100%);
+  }
+  .event-card.photo > :not(.ec-photo-layer), .open-banner.photo > :not(.ec-photo-layer){position:relative; z-index:2;}
+  .event-card.photo .icon-badge, .open-banner.photo .icon-badge{background:rgba(255,255,255,0.18); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px); border:1px solid rgba(255,255,255,0.4); color:var(--white);}
+  .event-card.photo h3{color:var(--white);}
+  .event-card.photo p{color:rgba(255,255,255,0.86); flex-grow:0;}
+  .ec-body{display:flex; flex-direction:column; gap:10px;}
+  .event-card.photo .chip{background:rgba(255,255,255,0.14); color:var(--white); border-color:rgba(255,255,255,0.3); backdrop-filter:blur(4px);}
+  @media (prefers-reduced-motion: reduce){
+    .ec-photo-layer{transition:none;}
+  }
+  .open-banner{
+    background:linear-gradient(120deg, var(--coral), #a5401f);
+    color:var(--white); border-radius:var(--radius);
+    padding:30px 32px; display:flex; align-items:center; justify-content:space-between;
+    gap:24px; flex-wrap:wrap;
+  }
+  .open-banner.photo::before{
+    background:linear-gradient(100deg, rgba(193,80,47,0.9) 0%, rgba(165,64,31,0.55) 45%, rgba(6,20,33,0.7) 100%);
+  }
+  .open-banner .left{display:flex; align-items:center; gap:18px;}
+  .open-banner .icon-badge{background:rgba(255,255,255,0.22); color:var(--white);}
+  .open-banner h3{color:var(--white); font-size:1.35rem;}
+  .open-banner p{margin:6px 0 0; color:rgba(255,255,255,0.88); font-size:0.95rem; max-width:52ch;}
+  .open-banner .tag{
+    background:rgba(255,255,255,0.18); font-weight:700; font-size:0.75rem;
+    padding:5px 12px; border-radius:var(--pill); white-space:nowrap;
+  }
+
+  /* ---------- CATEGORIES ---------- */
+  .categories{
+    position:relative; color:var(--white); overflow:hidden;
+    background-image:
+      linear-gradient(160deg, rgba(8,20,33,0.94) 0%, rgba(11,42,67,0.88) 55%, rgba(8,20,33,0.94) 100%),
+      url('images/sunset-waves.jpg');
+    background-position:center, center 65%;
+    background-size:100% 100%, 112% auto;
+  }
+  .categories .section-head h2{color:var(--white);}
+  .categories .section-head p{color:rgba(255,255,255,0.75);}
+  .categories .section-tag{color:var(--gold);}
+  .cat-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .cat-card{
+    background:rgba(255,255,255,0.06); backdrop-filter:blur(6px); -webkit-backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,0.16);
+    border-radius:var(--radius); padding:28px;
+  }
+  .cat-card .range{font-family:'Anton',sans-serif; font-size:2.3rem; color:var(--gold);}
+  .cat-card h3{color:var(--white); font-size:1.1rem; margin-top:6px;}
+  .cat-card p{margin:8px 0 0; font-size:0.9rem; color:rgba(255,255,255,0.7);}
+
+  /* ---------- TABLES ---------- */
+  table{width:100%; border-collapse:collapse; font-size:0.88rem;}
+  table caption{text-align:left; font-weight:700; margin-bottom:10px; color:var(--navy);}
+  th,td{text-align:left; padding:9px 8px; border-bottom:1px solid var(--line);}
+  th{color:var(--navy); font-weight:700; font-size:0.78rem; letter-spacing:0.02em;}
+  .totals-strip{
+    display:flex; gap:28px; margin-top:26px; flex-wrap:wrap;
+    border-top:1px solid var(--line); padding-top:20px;
+  }
+  .totals-strip div span{display:block;}
+  .totals-strip .n{font-family:'Anton',sans-serif; font-size:1.7rem; color:var(--navy);}
+  .totals-strip .l{font-size:0.8rem; color:#5a6b76;}
+
+  /* ---------- PYRAMID ---------- */
+  .pyramid{
+    position:relative;
+    background-image:
+      linear-gradient(180deg, rgba(245,239,223,0.96) 0%, rgba(245,239,223,0.9) 65%, rgba(245,239,223,0.97) 100%),
+      url('images/aerial-boats-shore.jpg');
+    background-position:center, center 40%;
+    background-size:100% 100%, 112% auto;
+  }
+  .flow{display:flex; flex-direction:column; align-items:center; gap:10px;}
+  .flow-row{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; width:100%;}
+  .flow-node{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--pill);
+    padding:14px 22px; font-size:0.85rem; font-weight:600; color:var(--navy);
+    text-align:center; min-width:150px; box-shadow:0 8px 20px rgba(11,42,67,0.08);
+  }
+  .flow-node.stage{background:var(--navy); color:var(--white); font-family:'Anton',sans-serif; font-size:0.95rem; letter-spacing:0.02em; border-radius:var(--radius-sm);}
+  .flow-node.final{background:var(--gold); color:var(--navy); font-family:'Anton',sans-serif; border-radius:var(--radius-sm);}
+  .flow-arrow{font-size:1.3rem; color:var(--teal); line-height:1;}
+  .prize-row{display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:6px;}
+  .prize-chip{
+    background:var(--navy-2); color:var(--white); border-radius:var(--pill); padding:10px 18px;
+    font-size:0.82rem; font-weight:600; display:flex; align-items:center; gap:8px;
+  }
+
+  /* ---------- PLEDGE ---------- */
+  .pledge{background:var(--ink-black); color:var(--white);}
+  .pledge .section-tag{color:var(--gold);}
+  .pledge .section-head h2{color:var(--white);}
+  .pledge .section-head p{color:rgba(255,255,255,0.78);}
+  .pledge-grid{display:grid; grid-template-columns:repeat(5,1fr); gap:16px;}
+  .pledge-photo-card{
+    position:relative; border-radius:var(--radius-sm); overflow:hidden;
+    aspect-ratio:3/4; box-shadow:0 14px 30px rgba(0,0,0,0.35);
+  }
+  .pledge-photo-card img{width:100%; height:100%; object-fit:cover; transition:transform 0.5s ease;}
+  .pledge-photo-card::after{
+    content:''; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(8,20,33,0.05) 35%, rgba(8,20,33,0.92) 100%);
+  }
+  .pledge-photo-card p{
+    position:absolute; left:14px; right:14px; bottom:14px; z-index:2;
+    margin:0; font-size:0.86rem; font-weight:700; line-height:1.25; color:var(--white);
+  }
+  .pledge-photo-card:hover img{transform:scale(1.08);}
+
+  /* ---------- REGISTER PAGE ---------- */
+  .register-hero{
+    position:relative; overflow:hidden;
+    margin-top:-78px;
+    background-image:
+      linear-gradient(165deg, rgba(8,20,33,0.92), rgba(11,42,67,0.86)),
+      url('images/sunset-waves.jpg');
+    background-position:center, center 60%;
+    background-size:100% 100%, 112% auto;
+    color:var(--white); padding:140px 0 64px;
+  }
+  .register-hero h1{color:var(--white); font-size:clamp(2rem,4vw,2.9rem);}
+  .register-hero p{color:rgba(255,255,255,0.78); max-width:56ch; margin-top:12px;}
+  .register-wrap{padding:48px 0 90px; background:var(--sand);}
+  .reg-layout{display:grid; grid-template-columns:1fr 320px; gap:36px; align-items:start;}
+  .reg-card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius);
+    padding:34px;
+  }
+  .reg-card h2{font-size:1.3rem; margin-bottom:6px;}
+  .reg-card > p.hint{margin:0 0 26px; font-size:0.9rem; color:#5a6b76;}
+  fieldset{border:none; padding:0; margin:0 0 24px;}
+  legend{
+    font-weight:700; font-size:0.95rem; color:var(--navy); margin-bottom:12px; padding:0;
+  }
+  .field{margin-bottom:18px;}
+  .field label{display:block; font-size:0.85rem; font-weight:600; color:var(--navy); margin-bottom:6px;}
+  .field .req{color:var(--coral);}
+  .field input[type=text], .field input[type=tel], .field input[type=number], .field select{
+    width:100%; padding:12px 14px; border:1px solid #c9bfa3; border-radius:var(--radius-sm);
+    font-family:inherit; font-size:0.95rem; background:var(--white); color:var(--ink);
+  }
+  .field input:focus, .field select:focus{border-color:var(--teal);}
+  .two-col{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .radio-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .radio-opt{
+    flex:1; min-width:170px; border:1.5px solid var(--line); border-radius:var(--radius-sm); padding:14px;
+    display:flex; align-items:flex-start; gap:10px; cursor:pointer;
+  }
+  .radio-opt:has(input:checked){border-color:var(--teal); background:rgba(18,121,138,0.06);}
+  .radio-opt input{margin-top:3px;}
+  .radio-opt .t{font-weight:700; font-size:0.92rem; color:var(--navy); display:block;}
+  .radio-opt .d{font-size:0.8rem; color:#5a6b76; display:block; margin-top:2px;}
+  .category-readout{
+    margin-top:6px; font-size:0.85rem; padding:9px 12px; border-radius:6px;
+    background:var(--sand-2); color:var(--navy); font-weight:600; display:none;
+  }
+  .category-readout.show{display:block;}
+  .category-readout.warn{background:#fbe6e0; color:var(--coral);}
+  .pledge-check{
+    display:flex; gap:10px; align-items:flex-start; background:var(--sand);
+    border:1px solid var(--line); border-radius:8px; padding:14px 16px; margin-top:6px;
+  }
+  .pledge-check input{margin-top:4px;}
+  .pledge-check p{margin:0; font-size:0.85rem; color:#3c4c58;}
+  .form-error{
+    display:none; background:#fbe6e0; color:var(--coral); border-radius:6px;
+    padding:10px 14px; font-size:0.85rem; font-weight:600; margin-bottom:16px;
+  }
+  .form-error.show{display:block;}
+  .submit-row{display:flex; align-items:center; gap:16px; margin-top:8px;}
+  .reg-side{display:flex; flex-direction:column; gap:18px;}
+  .side-card{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius); padding:22px;
+  }
+  .side-card h3{font-size:0.95rem; margin-bottom:10px;}
+  .side-card ul{margin:0; padding-left:18px; font-size:0.86rem; color:#43545f;}
+  .side-card li{margin-bottom:6px;}
+  .side-stat{text-align:center; padding:26px 22px;}
+  .side-stat .n{font-family:'Anton',sans-serif; font-size:2.1rem; color:var(--teal);}
+  .side-stat .l{font-size:0.82rem; color:#5a6b76; margin-top:4px;}
+
+  .confirm-panel{
+    background:var(--white); border:1px solid var(--line); border-radius:var(--radius);
+    padding:40px; text-align:center; display:none;
+  }
+  .confirm-panel.show{display:block;}
+  .confirm-panel .check{
+    width:56px; height:56px; border-radius:50%; background:var(--teal); color:var(--white);
+    display:flex; align-items:center; justify-content:center; font-size:1.6rem; margin:0 auto 18px;
+  }
+  .confirm-panel h2{font-size:1.4rem; margin-bottom:8px;}
+  .confirm-id{
+    display:inline-block; background:var(--sand-2); border-radius:6px; padding:8px 16px;
+    font-weight:700; letter-spacing:0.03em; color:var(--navy); margin:14px 0;
+  }
+  .confirm-summary{
+    text-align:left; max-width:420px; margin:20px auto; font-size:0.9rem; color:#43545f;
+  }
+  .confirm-summary div{display:flex; justify-content:space-between; padding:7px 0; border-bottom:1px solid var(--line);}
+  .confirm-summary div span:first-child{font-weight:600; color:var(--navy);}
+
+  /* ---------- FOOTER ---------- */
+  footer{background:var(--ink-black); color:rgba(255,255,255,0.65); padding:52px 0 28px;}
+  .footer-grid{display:grid; grid-template-columns:1.4fr 1fr 1fr; gap:30px; margin-bottom:30px;}
+  footer h4{color:var(--white); font-family:'Work Sans',sans-serif; font-weight:700; font-size:0.9rem; margin-bottom:12px;}
+  .footer-brand{font-family:var(--accent-font); font-style:italic; font-weight:600; font-size:1.4rem; color:var(--white); margin-bottom:10px;}
+  footer p, footer li{font-size:0.85rem; line-height:1.7;}
+  footer ul{list-style:none; margin:0; padding:0;}
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.1); padding-top:18px; font-size:0.78rem;
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px;
+  }
+
+  @media (max-width: 880px){
+    .obj-layout{grid-template-columns:1fr; gap:36px;}
+    .obj-photo img{height:340px;}
+    .obj-photo .cap{left:12px; bottom:-14px; max-width:calc(100% - 24px);}
+    .event-grid, .cat-grid{grid-template-columns:1fr 1fr;}
+    .pledge-grid{grid-template-columns:repeat(2,1fr);}
+    .cov-layout{grid-template-columns:1fr;}
+    .reg-layout{grid-template-columns:1fr;}
+    .footer-grid{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+    .hero-badge{flex-wrap:wrap;}
+    .hero-badge .row{flex:1 1 33%; border-right:none; border-bottom:1px solid var(--line); padding:16px 8px;}
+    .hero-badge-wrap .wrap{margin-top:-56px;}
+  }
+  /* ---------- LIVING PHOTO BACKGROUNDS ---------- */
+  /* Real photography drifts slowly in place of the old vector scene — a "live wallpaper" feel. */
+  .hero, .categories, .pyramid, .register-hero{
+    background-repeat:no-repeat, no-repeat;
+    will-change:background-size, background-position;
+  }
+  @media (max-width: 880px){
+    .hero{min-height:520px;}
+  }
+  @media (prefers-reduced-motion: no-preference){
+    .hero{animation:hero-pan 34s ease-in-out infinite alternate;}
+    .categories{animation:categories-pan 30s ease-in-out infinite alternate;}
+    .pyramid{animation:pyramid-pan 36s ease-in-out infinite alternate;}
+    .register-hero{animation:register-pan 30s ease-in-out infinite alternate;}
+  }
+  @keyframes hero-pan{
+    from{background-size:100% 100%, 112% auto; background-position:center, center 68%;}
+    to{background-size:100% 100%, 130% auto; background-position:center, 38% 62%;}
+  }
+  @keyframes categories-pan{
+    from{background-size:100% 100%, 112% auto; background-position:center, center 65%;}
+    to{background-size:100% 100%, 128% auto; background-position:center, 62% 58%;}
+  }
+  @keyframes pyramid-pan{
+    from{background-size:100% 100%, 112% auto; background-position:center, center 40%;}
+    to{background-size:100% 100%, 126% auto; background-position:center, 60% 48%;}
+  }
+  @keyframes register-pan{
+    from{background-size:100% 100%, 112% auto; background-position:center, center 60%;}
+    to{background-size:100% 100%, 128% auto; background-position:center, 42% 52%;}
+  }
+  .obj-photo img, .events-banner img{transform:scale(1.05); transform-origin:center;}
+  @media (prefers-reduced-motion: no-preference){
+    .obj-photo img{animation:living-zoom 26s ease-in-out infinite alternate;}
+    .events-banner img{animation:living-zoom 22s ease-in-out infinite alternate;}
+  }
+  @keyframes living-zoom{
+    from{transform:scale(1.02);}
+    to{transform:scale(1.12);}
+  }
+
+  /* ---------- SCROLL REVEAL ---------- */
+  .reveal{opacity:0; transform:translateY(26px); transition:opacity 0.65s ease, transform 0.65s ease;}
+  .reveal.in-view{opacity:1; transform:none;}
+  @media (prefers-reduced-motion: reduce){
+    .reveal{opacity:1; transform:none; transition:none;}
+  }
+
+  /* ---------- NAV SCROLL STATE ---------- */
+  .site-nav{transition:box-shadow 0.25s ease;}
+  .site-nav.scrolled{box-shadow:0 4px 18px rgba(0,0,0,0.25);}
+
+  /* ---------- CARD HOVER LIFT ---------- */
+  .event-card, .cat-card, .side-card, .side-stat{
+    transition:transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+  }
+  .event-card:hover, .side-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 14px 30px rgba(11,42,67,0.14);
+    border-color:rgba(18,121,138,0.35);
+  }
+  .cat-card:hover{
+    transform:translateY(-5px);
+    box-shadow:0 14px 30px rgba(0,0,0,0.28);
+    border-color:rgba(231,162,58,0.5);
+  }
+  .event-card:hover .icon-badge{transform:scale(1.1) rotate(-4deg);}
+  .icon-badge{transition:transform 0.25s ease;}
+  .open-banner{transition:transform 0.22s ease, box-shadow 0.22s ease;}
+  .open-banner:hover{transform:translateY(-5px); box-shadow:0 16px 34px rgba(193,80,47,0.35);}
+  .pledge-photo-card{transition:transform 0.22s ease, box-shadow 0.22s ease;}
+  .pledge-photo-card:hover{transform:translateY(-5px); box-shadow:0 20px 40px rgba(0,0,0,0.5);}
+  .obj-card{transition:transform 0.18s ease;}
+  .obj-card:hover{transform:translateX(4px);}
+  @media (prefers-reduced-motion: reduce){
+    .event-card, .cat-card, .side-card, .side-stat, .open-banner, .icon-badge, .pledge-photo-card, .pledge-photo-card img, .obj-card{transition:none;}
+  }
+
+  /* ---------- BUTTON MICRO-INTERACTION ---------- */
+  .btn{transition:transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;}
+  .btn:active{transform:translateY(0) scale(0.97);}
+
+  /* ---------- VIEW CROSSFADE ---------- */
+  #view-home, #view-register{transition:opacity 0.32s ease;}
+  #view-home.fade-out, #view-register.fade-out{opacity:0;}
+  @media (prefers-reduced-motion: reduce){
+    #view-home, #view-register{transition:none;}
+  }
+
+  /* ---------- CHECKMARK DRAW ---------- */
+  .check-draw{width:34px; height:34px;}
+  .check-draw circle{fill:none;}
+  .check-draw path{
+    fill:none; stroke:#FFFFFF; stroke-width:4; stroke-linecap:round; stroke-linejoin:round;
+    stroke-dasharray:40; stroke-dashoffset:40;
+    animation:draw-check 0.5s ease 0.15s forwards;
+  }
+  @keyframes draw-check{ to{stroke-dashoffset:0;} }
+  @media (prefers-reduced-motion: reduce){
+    .check-draw path{animation:none; stroke-dashoffset:0;}
+  }
+
+  /* ---------- COUNTER NUMS ---------- */
+  .hero-badge .num, .totals-strip .n{font-variant-numeric:tabular-nums;}
+
+  @media (max-width: 560px){
+    .obj-grid, .event-grid, .cat-grid, .pledge-grid{grid-template-columns:1fr;}
+    .two-col{grid-template-columns:1fr;}
+    section{padding:56px 0;}
+  }
+</style>
+
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="wrap">
+    <div class="brand">
+      <img class="mark" src="images/logo.jpg" alt="Coastal Sports Championship logo">
+      <span>COASTAL SPORTS<br><small>CHAMPIONSHIP · TN &amp; PUDUCHERRY</small></span>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <button class="link-btn" data-scroll="about">About</button>
+      <button class="link-btn" data-scroll="events">Events</button>
+      <button class="link-btn" data-scroll="categories">Categories</button>
+      <button class="link-btn" data-scroll="pledge">Pledge</button>
+      <button class="btn btn-gold" id="navRegisterBtn">Register</button>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HOME VIEW ============ -->
+<div id="view-home">
+
+  <header class="hero">
+    <div class="wrap">
+      <div>
+        <img class="hero-logo" src="images/logo.jpg" alt="Coastal Sports Championship logo">
+        <div class="hero-eyebrow">Tamil Nadu &amp; Puducherry · Coastal Villages</div>
+        <h1>COASTAL SPORTS<br>CHAMPIONSHIP<span>.</span></h1>
+        <p class="sub">A championship built for India's fishing-community youth — six sports, three age categories, and <span class="accent-italic">one shot at the finals</span>, spanning 608 villages along the coast.</p>
+        <div class="theme-line">"Healthy Youth – Strong Coast – Strong Nation"</div>
+        <div class="hero-ctas">
+          <button class="btn btn-gold" id="heroRegisterBtn">Register your entry</button>
+          <button class="btn btn-outline" data-scroll="events">See the events</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="hero-badge-wrap">
+    <div class="wrap">
+      <div class="hero-badge">
+        <div class="row"><span class="lbl">Regional clusters</span><span class="num" data-count="5">0</span></div>
+        <div class="row"><span class="lbl">Sports</span><span class="num" data-count="6">0</span></div>
+        <div class="row"><span class="lbl">Age categories</span><span class="num" data-count="3">0</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section class="objectives" id="about">
+    <div class="wrap">
+      <div class="obj-layout">
+        <div class="obj-photo">
+          <img src="images/fishermen-harbor.jpg" alt="Fishermen pushing their boat into the surf at sunrise on the Tamil Nadu coast">
+          <div class="cap"><span>608 villages</span>along the Tamil Nadu &amp; Puducherry coast</div>
+        </div>
+        <div>
+          <div class="section-head" style="margin-bottom:32px;">
+            <div class="section-tag">WHY THIS CHAMPIONSHIP</div>
+            <h2>Built around the coast, <span class="accent-italic">for the coast</span></h2>
+            <p>Every match, cluster and category is designed around one goal: giving fishing-community youth a real stage to compete on.</p>
+          </div>
+          <div class="obj-grid">
+            <div class="obj-card">
+              <div class="n">01</div>
+              <div><h3>Promote sports among coastal youth</h3>
+              <p>Structured, well-organised competition brought directly into 608 coastal villages.</p></div>
+            </div>
+            <div class="obj-card">
+              <div class="n">02</div>
+              <div><h3>Identify talent</h3>
+              <p>A group-to-finals format that surfaces the strongest players and teams from every cluster.</p></div>
+            </div>
+            <div class="obj-card">
+              <div class="n">03</div>
+              <div><h3>Strengthen coastal communities</h3>
+              <p>A shared championship that brings villages, clusters and regions together around sport.</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="events">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-tag">THE FORMAT</div>
+        <h2>Six sports, <span class="accent-italic">three categories</span></h2>
+        <p>Three team sports and two individual sports are each contested by every age category. Turf Cricket runs as one open bracket for all ages.</p>
+      </div>
+
+      <div class="events-banner">
+        <img src="images/boys-running-beach.jpg" alt="A pack of young athletes sprinting along the shoreline" loading="lazy">
+        <div class="cap">
+          <span class="tag">608 VILLAGES · ONE STAGE</span>
+          <h3>Every group has a champion in the making</h3>
+        </div>
+      </div>
+
+      <div class="events-group-label">Team events <span class="count">Junior · Youth · Senior Youth</span></div>
+      <div class="event-grid">
+        <div class="event-card photo">
+          <div class="ec-photo-layer" style="background-image:url('images/volleyball-court.jpg'); background-position:center bottom"></div>
+          <div class="icon-badge c-teal">VB</div>
+          <div class="ec-body">
+            <h3>Volleyball</h3>
+            <p>Six-a-side matches at the village-group stage, narrowing down to one qualifier per group.</p>
+            <div class="chip-row"><span class="chip">Team</span><span class="chip">All 3 categories</span></div>
+          </div>
+        </div>
+        <div class="event-card photo">
+          <div class="ec-photo-layer" style="background-image:url('images/kabaddi-wrestling.jpg')"></div>
+          <div class="icon-badge c-gold">KB</div>
+          <div class="ec-body">
+            <h3>Kabaddi</h3>
+            <p>A coastal favourite — raid-based rounds run through the same group and cluster structure.</p>
+            <div class="chip-row"><span class="chip">Team</span><span class="chip">All 3 categories</span></div>
+          </div>
+        </div>
+        <div class="event-card photo">
+          <div class="ec-photo-layer" style="background-image:url('images/kho-kho-running.jpg'); background-position:center bottom"></div>
+          <div class="icon-badge c-navy">KK</div>
+          <div class="ec-body">
+            <h3>Kho-Kho</h3>
+            <p>Fast-paced chasing and dodging, run in groups within each of the five clusters.</p>
+            <div class="chip-row"><span class="chip">Team</span><span class="chip">All 3 categories</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="events-group-label">Individual events <span class="count">Junior · Youth · Senior Youth</span></div>
+      <div class="event-grid">
+        <div class="event-card photo">
+          <div class="ec-photo-layer" style="background-image:url('images/yogasana-beach-group.jpg')"></div>
+          <div class="icon-badge c-coral">YG</div>
+          <div class="ec-body">
+            <h3>Yogasana</h3>
+            <p>Judged individually on form and control, scored separately within each age category.</p>
+            <div class="chip-row"><span class="chip">Individual</span><span class="chip">All 3 categories</span></div>
+          </div>
+        </div>
+        <div class="event-card photo">
+          <div class="ec-photo-layer" style="background-image:url('images/silambam-kendo-practice.jpg')"></div>
+          <div class="icon-badge c-teal">SB</div>
+          <div class="ec-body">
+            <h3>Silambam</h3>
+            <p>Traditional Tamil stick-martial-art, contested one-on-one through to the cluster final.</p>
+            <div class="chip-row"><span class="chip">Individual</span><span class="chip">All 3 categories</span></div>
+          </div>
+        </div>
+        <div class="open-banner photo" style="grid-column: span 1;">
+          <div class="ec-photo-layer" style="background-image:url('images/turf-cricket-beach.jpg')"></div>
+          <div class="left">
+            <div class="icon-badge">TC</div>
+            <div>
+              <h3>Turf Cricket</h3>
+              <p>One open bracket across all age categories — everyone competes together.</p>
+            </div>
+          </div>
+          <div class="tag">OPEN FOR ALL</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="categories" id="categories">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-tag">AGE CATEGORIES</div>
+        <h2>Three brackets, one championship</h2>
+        <p>Team and individual events run separately within each bracket. Turf Cricket is the one event open across all three.</p>
+      </div>
+      <div class="cat-grid">
+        <div class="cat-card">
+          <div class="range">14–18</div>
+          <h3>Junior</h3>
+          <p>Entry point for the championship's youngest coastal athletes.</p>
+        </div>
+        <div class="cat-card">
+          <div class="range">19–25</div>
+          <h3>Youth</h3>
+          <p>The core competitive bracket across all six sports.</p>
+        </div>
+        <div class="cat-card">
+          <div class="range">26–35</div>
+          <h3>Senior Youth</h3>
+          <p>For experienced players carrying the sport in their community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pyramid">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-tag">PATH TO THE FINALS</div>
+        <h2>From village group to championship final</h2>
+        <p>Every cluster runs its own group stage. One winner comes out of every group, and all group winners meet at the finals.</p>
+      </div>
+      <div class="flow">
+        <div class="flow-node stage">CLUSTER LEVEL — 5 CLUSTERS, 12 GROUPS</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-row">
+          <div class="flow-node">Ramanathapuram<br>Groups A · B · C</div>
+          <div class="flow-node">Nagapattinam<br>Groups A · B · C</div>
+          <div class="flow-node">Puducherry<br>Groups A · B</div>
+          <div class="flow-node">Chennai<br>Groups A · B</div>
+          <div class="flow-node">Thiruvallur<br>Groups A · B</div>
+        </div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node">One qualifier per group</div>
+        <div class="flow-arrow">↓</div>
+        <div class="flow-node final">CHAMPIONSHIP FINALS — ALL GROUP WINNERS</div>
+        <div class="flow-arrow">↓</div>
+        <div class="prize-row">
+          <div class="prize-chip">🥇 1st Prize</div>
+          <div class="prize-chip">🥈 2nd Prize</div>
+          <div class="prize-chip">🥉 3rd Prize</div>
+          <div class="prize-chip">🏅 4th Prize</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="pledge" id="pledge">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="section-tag">COASTAL IDENTITY</div>
+        <h2>Every participant takes <span class="accent-italic">the pledge</span></h2>
+        <p>Before stepping onto the field, every athlete commits to five things that matter beyond the scoreboard.</p>
+      </div>
+      <div class="pledge-grid">
+        <div class="pledge-photo-card"><img src="images/rocky-waves.jpg" style="object-position:30% 85%" alt="Volunteers rescuing a sea turtle and cleaning the beach at sunset" loading="lazy"><p>Marine Conservation</p></div>
+        <div class="pledge-photo-card"><img src="images/fishing-family-cooking.jpg" alt="Welfare volunteer meeting fishermen on the beach to discuss healthcare, education and insurance support" loading="lazy"><p>Fishermen Welfare</p></div>
+        <div class="pledge-photo-card"><img src="images/wooden-dock.jpg" alt="Clean Coast Crew volunteers collecting plastic and fishing-net waste from the beach" loading="lazy"><p>Coastal Cleanliness</p></div>
+        <div class="pledge-photo-card"><img src="images/youth-running-fitness.jpg" alt="A group of fit young athletes running on the beach" loading="lazy"><p>Drug-free Youth</p></div>
+        <div class="pledge-photo-card"><img src="images/group-jump-sunset.jpg" alt="A group of friends jumping together in celebration at sunset" loading="lazy"><p>National Unity</p></div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<!-- ============ REGISTER VIEW ============ -->
+<div id="view-register" class="hidden">
+  <header class="register-hero">
+    <div class="wrap">
+      <div class="section-tag" style="color:var(--gold)">REGISTRATION</div>
+      <h1>Register for the Championship</h1>
+      <p>Enter as a team for Volleyball, Kabaddi, Kho-Kho or the open-category Turf Cricket, or as an individual for Yogasana or Silambam.</p>
+    </div>
+  </header>
+
+  <div class="register-wrap">
+    <div class="wrap">
+      <div class="reg-layout">
+
+        <div>
+          <div class="reg-card" id="formCard">
+            <h2>Entry form</h2>
+            <p class="hint">Fields marked <span class="req">*</span> are required.</p>
+            <div class="form-error" id="formError">Please check the highlighted fields before submitting.</div>
+
+            <form id="regForm" novalidate>
+              <fieldset>
+                <legend>Entry type</legend>
+                <div class="radio-row">
+                  <label class="radio-opt">
+                    <input type="radio" name="entryType" value="team" checked>
+                    <span><span class="t">Team event</span><span class="d">Volleyball, Kabaddi, Kho-Kho or Turf Cricket</span></span>
+                  </label>
+                  <label class="radio-opt">
+                    <input type="radio" name="entryType" value="individual">
+                    <span><span class="t">Individual event</span><span class="d">Yogasana or Silambam</span></span>
+                  </label>
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Event</legend>
+                <div class="field">
+                  <label for="eventSelect">Choose your event <span class="req">*</span></label>
+                  <select id="eventSelect" required></select>
+                </div>
+                <div class="field" id="teamNameField">
+                  <label for="teamName">Team name <span class="req">*</span></label>
+                  <input type="text" id="teamName" placeholder="e.g. Ramanathapuram Wave Riders">
+                </div>
+                <div class="field" id="squadSizeField">
+                  <label for="squadSize">Number of players</label>
+                  <input type="number" id="squadSize" min="1" max="20" placeholder="e.g. 12">
+                </div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Participant / captain details</legend>
+                <div class="two-col">
+                  <div class="field">
+                    <label for="fullName">Full name <span class="req">*</span></label>
+                    <input type="text" id="fullName" required>
+                  </div>
+                  <div class="field">
+                    <label for="gender">Gender <span class="req">*</span></label>
+                    <select id="gender" required>
+                      <option value="">Select</option>
+                      <option>Male</option>
+                      <option>Female</option>
+                      <option>Other</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="two-col">
+                  <div class="field">
+                    <label for="age">Age <span class="req">*</span></label>
+                    <input type="number" id="age" min="14" max="35" required>
+                  </div>
+                  <div class="field">
+                    <label for="phone">Phone number <span class="req">*</span></label>
+                    <input type="tel" id="phone" placeholder="10-digit mobile number" required>
+                  </div>
+                </div>
+                <div class="category-readout" id="categoryReadout"></div>
+              </fieldset>
+
+              <fieldset>
+                <legend>Village &amp; cluster</legend>
+                <div class="two-col">
+                  <div class="field">
+                    <label for="cluster">Cluster <span class="req">*</span></label>
+                    <select id="cluster" required>
+                      <option value="">Select cluster</option>
+                      <option>Ramanathapuram</option>
+                      <option>Nagapattinam</option>
+                      <option>Puducherry</option>
+                      <option>Chennai</option>
+                      <option>Thiruvallur</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="village">Village <span class="req">*</span></label>
+                    <input type="text" id="village" required>
+                  </div>
+                </div>
+                <div class="field">
+                  <label for="emergency">Emergency contact number</label>
+                  <input type="tel" id="emergency" placeholder="A second contact number, if different">
+                </div>
+              </fieldset>
+
+              <div class="pledge-check">
+                <input type="checkbox" id="pledgeCheck" required>
+                <p>I take the Coastal Athlete's Pledge — committing to marine conservation, fishermen welfare, coastal cleanliness, staying drug-free, and national unity. <span class="req">*</span></p>
+              </div>
+
+              <div class="submit-row">
+                <button type="submit" class="btn btn-gold" id="submitBtn">Submit registration</button>
+                <span id="submitStatus" style="font-size:0.85rem; color:#5a6b76;"></span>
+              </div>
+            </form>
+          </div>
+
+          <div class="confirm-panel" id="confirmPanel">
+            <div class="check"><svg class="check-draw" viewBox="0 0 34 34" xmlns="http://www.w3.org/2000/svg"><path d="M8 17 L14 23 L26 10"></path></svg></div>
+            <h2>Registration received</h2>
+            <p style="color:#5a6b76;">Keep your registration ID — the cluster coordinator will use it to confirm your group and schedule.</p>
+            <div class="confirm-id" id="confirmId"></div>
+            <div class="confirm-summary" id="confirmSummary"></div>
+            <button class="btn btn-navy" id="registerAnotherBtn">Register another entry</button>
+          </div>
+        </div>
+
+        <div class="reg-side">
+          <div class="side-card side-stat">
+            <div class="n" id="regCount">—</div>
+            <div class="l">Entries received so far</div>
+          </div>
+          <div class="side-card">
+            <h3>Before you register</h3>
+            <ul>
+              <li>Team events need a team name and a captain's contact details.</li>
+              <li>Individual events (Yogasana, Silambam) register one athlete at a time.</li>
+              <li>Turf Cricket is a single open bracket across all three age categories.</li>
+              <li>Your age determines your category: Junior 14–18, Youth 19–25, Senior Youth 26–35.</li>
+            </ul>
+          </div>
+          <div class="side-card">
+            <h3>Need help?</h3>
+            <p style="font-size:0.86rem; color:#5a6b76; margin:0;">Contact your cluster coordinator or reach the organising committee for registration support.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand">Coastal Sports Championship</div>
+        <p>A championship for fishing-community youth across Tamil Nadu &amp; Puducherry — 608 villages, 5 clusters, 6 sports, 3 age categories.</p>
+      </div>
+      <div>
+        <h4>Clusters</h4>
+        <ul>
+          <li>Ramanathapuram</li>
+          <li>Nagapattinam</li>
+          <li>Puducherry</li>
+          <li>Chennai</li>
+          <li>Thiruvallur</li>
+        </ul>
+      </div>
+      <div>
+        <h4>Championship</h4>
+        <ul>
+          <li><button class="link-btn" style="color:inherit; padding:0;" data-scroll="events">Events</button></li>
+          <li><button class="link-btn" style="color:inherit; padding:0;" data-scroll="categories">Age categories</button></li>
+          <li><button class="link-btn" style="color:inherit; padding:0;" id="footerRegisterBtn">Registration</button></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>Coastal Sports Championship · Tamil Nadu &amp; Puducherry</span>
+      <span>"Healthy Youth – Strong Coast – Strong Nation"</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var homeView = document.getElementById('view-home');
+  var regView = document.getElementById('view-register');
+
+  var prefersReduced = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var FADE_MS = prefersReduced ? 0 : 320;
+
+  function switchView(fromView, toView){
+    fromView.classList.add('fade-out');
+    setTimeout(function(){
+      fromView.classList.add('hidden');
+      fromView.classList.remove('fade-out');
+      toView.classList.remove('hidden');
+      toView.classList.add('fade-out');
+      // force reflow so the transition actually runs
+      void toView.offsetWidth;
+      toView.classList.remove('fade-out');
+      window.scrollTo({top:0, behavior:'instant' in window ? 'instant':'auto'});
+      runReveal();
+    }, FADE_MS);
+  }
+
+  function showHome(){
+    switchView(regView, homeView);
+  }
+  function showRegister(){
+    switchView(homeView, regView);
+    refreshCount();
+  }
+
+  document.getElementById('navRegisterBtn').addEventListener('click', showRegister);
+  document.getElementById('heroRegisterBtn').addEventListener('click', showRegister);
+  document.getElementById('footerRegisterBtn').addEventListener('click', showRegister);
+  document.getElementById('registerAnotherBtn').addEventListener('click', function(){
+    document.getElementById('confirmPanel').classList.remove('show');
+    document.getElementById('formCard').style.display = '';
+    document.getElementById('regForm').reset();
+    updateEventOptions();
+    refreshCount();
+  });
+
+  document.querySelectorAll('[data-scroll]').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var id = btn.getAttribute('data-scroll');
+      var scrollToSection = function(){
+        var el = document.getElementById(id);
+        if(el) el.scrollIntoView({behavior:'smooth'});
+      };
+      if(regView.classList.contains('hidden')){
+        // already on the home view — just scroll, no view switch involved
+        scrollToSection();
+        return;
+      }
+      showHome();
+      setTimeout(scrollToSection, FADE_MS + 30);
+    });
+  });
+
+  // ---------- Event options based on entry type ----------
+  var eventsByType = {
+    team: ['Volleyball', 'Kabaddi', 'Kho-Kho', 'Turf Cricket (Open Category — all ages)'],
+    individual: ['Yogasana', 'Silambam']
+  };
+  var eventSelect = document.getElementById('eventSelect');
+  var teamNameField = document.getElementById('teamNameField');
+  var squadSizeField = document.getElementById('squadSizeField');
+
+  function updateEventOptions(){
+    var type = document.querySelector('input[name="entryType"]:checked').value;
+    eventSelect.innerHTML = '';
+    eventsByType[type].forEach(function(ev){
+      var opt = document.createElement('option');
+      opt.value = ev; opt.textContent = ev;
+      eventSelect.appendChild(opt);
+    });
+    var isTeam = type === 'team';
+    teamNameField.style.display = isTeam ? '' : 'none';
+    squadSizeField.style.display = isTeam ? '' : 'none';
+    document.getElementById('teamName').required = isTeam;
+  }
+  document.querySelectorAll('input[name="entryType"]').forEach(function(r){
+    r.addEventListener('change', updateEventOptions);
+  });
+  updateEventOptions();
+
+  // ---------- Age -> category readout ----------
+  var ageInput = document.getElementById('age');
+  var readout = document.getElementById('categoryReadout');
+  function categoryForAge(age){
+    if(age >= 14 && age <= 18) return 'Junior (14–18)';
+    if(age >= 19 && age <= 25) return 'Youth (19–25)';
+    if(age >= 26 && age <= 35) return 'Senior Youth (26–35)';
+    return null;
+  }
+  ageInput.addEventListener('input', function(){
+    var age = parseInt(ageInput.value, 10);
+    readout.classList.remove('warn');
+    if(!age){ readout.classList.remove('show'); return; }
+    var cat = categoryForAge(age);
+    if(cat){
+      readout.textContent = 'Category: ' + cat;
+    } else {
+      readout.textContent = 'This championship runs Junior (14–18) to Senior Youth (26–35). Please check the age entered.';
+      readout.classList.add('warn');
+    }
+    readout.classList.add('show');
+  });
+
+  // ---------- Storage-backed registration count ----------
+  var STORAGE_KEY = 'registrations';
+  function refreshCount(){
+    var el = document.getElementById('regCount');
+    if(!window.storage){ el.textContent = '—'; return; }
+    window.storage.get(STORAGE_KEY, true).then(function(res){
+      var list = res && res.value ? JSON.parse(res.value) : [];
+      el.textContent = list.length;
+    }).catch(function(){
+      el.textContent = '0';
+    });
+  }
+  refreshCount();
+
+  // ---------- Form submit ----------
+  var form = document.getElementById('regForm');
+  var formError = document.getElementById('formError');
+  var submitBtn = document.getElementById('submitBtn');
+  var submitStatus = document.getElementById('submitStatus');
+
+  form.addEventListener('submit', function(e){
+    e.preventDefault();
+    formError.classList.remove('show');
+
+    var type = document.querySelector('input[name="entryType"]:checked').value;
+    var event = eventSelect.value;
+    var teamName = document.getElementById('teamName').value.trim();
+    var squadSize = document.getElementById('squadSize').value;
+    var fullName = document.getElementById('fullName').value.trim();
+    var gender = document.getElementById('gender').value;
+    var age = parseInt(ageInput.value, 10);
+    var phone = document.getElementById('phone').value.trim();
+    var cluster = document.getElementById('cluster').value;
+    var village = document.getElementById('village').value.trim();
+    var emergency = document.getElementById('emergency').value.trim();
+    var pledged = document.getElementById('pledgeCheck').checked;
+
+    var valid = true;
+    if(!fullName || !gender || !age || !phone || !cluster || !village || !pledged) valid = false;
+    if(type === 'team' && !teamName) valid = false;
+    if(!categoryForAge(age)) valid = false;
+    if(phone && !/^[0-9+ ]{7,15}$/.test(phone)) valid = false;
+
+    if(!valid){
+      formError.classList.add('show');
+      formError.scrollIntoView({behavior:'smooth', block:'center'});
+      return;
+    }
+
+    var entry = {
+      id: 'CSC-' + Date.now().toString(36).toUpperCase(),
+      type: type,
+      event: event,
+      teamName: type === 'team' ? teamName : null,
+      squadSize: type === 'team' ? squadSize : null,
+      fullName: fullName,
+      gender: gender,
+      age: age,
+      category: categoryForAge(age),
+      phone: phone,
+      cluster: cluster,
+      village: village,
+      emergency: emergency,
+      submittedAt: new Date().toISOString()
+    };
+
+    submitBtn.disabled = true;
+    submitStatus.textContent = 'Saving your registration…';
+
+    var save = function(){
+      if(!window.storage){
+        showConfirmation(entry);
+        submitBtn.disabled = false;
+        submitStatus.textContent = '';
+        return;
+      }
+      window.storage.get(STORAGE_KEY, true).then(function(res){
+        var list = res && res.value ? JSON.parse(res.value) : [];
+        list.push(entry);
+        return window.storage.set(STORAGE_KEY, JSON.stringify(list), true);
+      }).then(function(result){
+        submitBtn.disabled = false;
+        submitStatus.textContent = '';
+        if(!result){
+          formError.textContent = 'We could not save your registration just now. Please try again.';
+          formError.classList.add('show');
+          return;
+        }
+        showConfirmation(entry);
+        refreshCount();
+      }).catch(function(){
+        submitBtn.disabled = false;
+        submitStatus.textContent = '';
+        formError.textContent = 'We could not save your registration just now. Please try again.';
+        formError.classList.add('show');
+      });
+    };
+    save();
+  });
+
+  function showConfirmation(entry){
+    document.getElementById('formCard').style.display = 'none';
+    var panel = document.getElementById('confirmPanel');
+    document.getElementById('confirmId').textContent = entry.id;
+    var summary = document.getElementById('confirmSummary');
+    summary.innerHTML = '';
+    var rows = [
+      ['Name', entry.fullName],
+      ['Event', entry.event],
+      ['Category', entry.category],
+      ['Cluster', entry.cluster],
+      ['Village', entry.village]
+    ];
+    if(entry.teamName) rows.splice(2, 0, ['Team', entry.teamName]);
+    rows.forEach(function(r){
+      var row = document.createElement('div');
+      row.innerHTML = '<span>' + r[0] + '</span><span>' + r[1] + '</span>';
+      summary.appendChild(row);
+    });
+    panel.classList.add('show');
+    // restart the checkmark draw animation on every submission
+    var checkPath = panel.querySelector('.check-draw path');
+    if(checkPath){
+      checkPath.style.animation = 'none';
+      void checkPath.offsetWidth;
+      checkPath.style.animation = '';
+    }
+    panel.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  // ---------- Nav gains a shadow once the page has scrolled ----------
+  var siteNav = document.querySelector('.site-nav');
+  function updateNavShadow(){
+    if(window.scrollY > 12) siteNav.classList.add('scrolled');
+    else siteNav.classList.remove('scrolled');
+  }
+  window.addEventListener('scroll', updateNavShadow, {passive:true});
+  updateNavShadow();
+
+
+  // ---------- Scroll-reveal for sections and their card grids ----------
+  var revealTargets = [];
+  function prepareReveal(){
+    revealTargets = [];
+    document.querySelectorAll('#view-home section, #view-home .objectives, #view-home .hero-badge').forEach(function(section){
+      if(!section.classList.contains('reveal-ready')){
+        section.classList.add('reveal-ready');
+      }
+    });
+    document.querySelectorAll('.obj-card, .event-card, .cat-card, .pledge-card, .open-banner, .hero-badge, .pledge-photo-card, .obj-photo, .section-photo, .events-banner').forEach(function(card, i){
+      if(!card.classList.contains('reveal')){
+        card.classList.add('reveal');
+        card.style.transitionDelay = (Math.min(i % 6, 5) * 0.06) + 's';
+        revealTargets.push(card);
+      }
+    });
+  }
+  var revealObserver = ('IntersectionObserver' in window) ? new IntersectionObserver(function(entries){
+    entries.forEach(function(entry){
+      if(entry.isIntersecting){
+        entry.target.classList.add('in-view');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, {threshold:0.15, rootMargin:'0px 0px -40px 0px'}) : null;
+
+  function runReveal(){
+    prepareReveal();
+    if(revealObserver){
+      revealTargets.forEach(function(el){ revealObserver.observe(el); });
+    } else {
+      revealTargets.forEach(function(el){ el.classList.add('in-view'); });
+    }
+  }
+  runReveal();
+
+  // ---------- Count-up animation for the hero stat numbers ----------
+  function animateCounters(){
+    document.querySelectorAll('.hero-badge .num[data-count]').forEach(function(el){
+      var target = parseInt(el.getAttribute('data-count'), 10) || 0;
+      if(prefersReduced){ el.textContent = target; return; }
+      var start = null;
+      var duration = 900;
+      function step(ts){
+        if(!start) start = ts;
+        var progress = Math.min((ts - start) / duration, 1);
+        el.textContent = Math.round(progress * target);
+        if(progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    });
+  }
+  setTimeout(animateCounters, 250);
+})();
+</script>
+
+</body>
+</html>

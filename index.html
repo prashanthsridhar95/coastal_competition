@@ -1204,6 +1204,8 @@
   refreshCount();
 
   // ---------- Form submit ----------
+  // Apps Script web app URL that appends rows to the registration sheet (see apps-script/README.md)
+  var SHEETS_URL = '';
   var form = document.getElementById('regForm');
   var formError = document.getElementById('formError');
   var submitBtn = document.getElementById('submitBtn');
@@ -1258,33 +1260,34 @@
     submitBtn.disabled = true;
     submitStatus.textContent = 'Saving your registration…';
 
+    var fail = function(){
+      submitBtn.disabled = false;
+      submitStatus.textContent = '';
+      formError.textContent = 'We could not save your registration just now. Please try again.';
+      formError.classList.add('show');
+    };
+    var done = function(){
+      submitBtn.disabled = false;
+      submitStatus.textContent = '';
+      showConfirmation(entry);
+    };
     var save = function(){
-      if(!window.storage){
-        showConfirmation(entry);
-        submitBtn.disabled = false;
-        submitStatus.textContent = '';
-        return;
-      }
-      window.storage.get(STORAGE_KEY, true).then(function(res){
-        var list = res && res.value ? JSON.parse(res.value) : [];
-        list.push(entry);
-        return window.storage.set(STORAGE_KEY, JSON.stringify(list), true);
-      }).then(function(result){
-        submitBtn.disabled = false;
-        submitStatus.textContent = '';
-        if(!result){
-          formError.textContent = 'We could not save your registration just now. Please try again.';
-          formError.classList.add('show');
-          return;
+      if(!SHEETS_URL){ fail(); return; }
+      // text/plain keeps this a "simple" request, so no CORS preflight (Apps Script can't answer one)
+      fetch(SHEETS_URL, {
+        method: 'POST', mode: 'no-cors',
+        headers: {'Content-Type': 'text/plain;charset=utf-8'},
+        body: JSON.stringify(entry)
+      }).then(function(){
+        done();
+        if(window.storage){
+          window.storage.get(STORAGE_KEY, true).then(function(res){
+            var list = res && res.value ? JSON.parse(res.value) : [];
+            list.push(entry);
+            return window.storage.set(STORAGE_KEY, JSON.stringify(list), true);
+          }).then(refreshCount).catch(function(){});
         }
-        showConfirmation(entry);
-        refreshCount();
-      }).catch(function(){
-        submitBtn.disabled = false;
-        submitStatus.textContent = '';
-        formError.textContent = 'We could not save your registration just now. Please try again.';
-        formError.classList.add('show');
-      });
+      }).catch(fail);
     };
     save();
   });

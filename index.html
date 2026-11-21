@@ -21,7 +21,7 @@
 <meta name="twitter:image" content="images/logo.jpg">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500;1,9..144,600&family=Noto+Sans+Tamil:wght@400;500;600;700;800&family=Work+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
     --navy:#0B2A43;
@@ -649,6 +649,53 @@
     .two-col{grid-template-columns:1fr;}
     section{padding:56px 0;}
   }
+
+  /* ---------- LANGUAGE TOGGLE ---------- */
+  .lang-toggle{
+    display:inline-flex; flex:none; border:1px solid rgba(255,255,255,0.35); border-radius:999px; overflow:hidden;
+  }
+  .lang-toggle button{
+    background:transparent; border:none; color:rgba(255,255,255,0.82); font-size:0.82rem; font-weight:600;
+    padding:7px 13px; line-height:1; cursor:pointer;
+  }
+  .lang-toggle button[aria-pressed="true"]{background:var(--white); color:var(--navy);}
+  .lang-toggle button:not([aria-pressed="true"]):hover{color:var(--white);}
+  .lang-toggle button:focus-visible{outline:2px solid var(--gold); outline-offset:-2px;}
+  .nav-links{margin-left:auto;}
+
+  /* ---------- CAFE LOGO ---------- */
+  .brand .mark.cafe{margin-left:2px;}
+  .hero-logos{display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:26px;}
+  .hero-logos .hero-logo{margin-bottom:0;}
+  .cafe-chip{
+    background:#F6EFE4; border-radius:14px; padding:8px 12px; display:block;
+    box-shadow:0 12px 30px rgba(0,0,0,0.3);
+  }
+  .hero-logos .cafe-chip img{display:block; width:220px; height:auto;}
+  .footer-org{margin-top:22px;}
+  .footer-org .lbl{display:block; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:8px;}
+  .footer-org .cafe-chip{display:inline-block; box-shadow:none;}
+  .footer-org .cafe-chip img{display:block; width:200px; height:auto;}
+
+  /* ---------- TAMIL ---------- */
+  html[lang="ta"] body, html[lang="ta"] button, html[lang="ta"] input, html[lang="ta"] select,
+  html[lang="ta"] h1, html[lang="ta"] h2, html[lang="ta"] h3, html[lang="ta"] h4,
+  html[lang="ta"] .brand, html[lang="ta"] .brand small, html[lang="ta"] .accent-italic,
+  html[lang="ta"] .footer-brand, html[lang="ta"] .theme-line, html[lang="ta"] .cap, html[lang="ta"] .cap *,
+  html[lang="ta"] .flow-node, html[lang="ta"] .range, html[lang="ta"] .hero-badge .num{
+    font-family:'Noto Sans Tamil','Work Sans',sans-serif !important;
+    font-style:normal !important; letter-spacing:normal !important;
+  }
+  html[lang="ta"] h1, html[lang="ta"] h2, html[lang="ta"] h3, html[lang="ta"] h4{font-weight:700; line-height:1.3; text-transform:none;}
+  html[lang="ta"] .hero h1{font-size:clamp(2.1rem, 4.8vw, 3.5rem);}
+  html[lang="ta"] .section-tag, html[lang="ta"] .hero-eyebrow, html[lang="ta"] .events-group-label{letter-spacing:0.02em; text-transform:none;}
+  @media (max-width:880px){
+    .lang-toggle{margin-left:auto;}
+  }
+  @media (max-width:480px){
+    .brand .mark.cafe, .brand small{display:none;}
+    .hero-logos .cafe-chip img{width:190px;}
+  }
 </style>
 
 </head>
@@ -658,6 +705,7 @@
   <div class="wrap">
     <div class="brand">
       <img class="mark" src="images/logo.jpg" alt="Coastal Sports Championship logo">
+      <img class="mark cafe" src="images/cafe-logo-icon.png" alt="CAFE — Coastal Area Fisherman Empowerment Trust logo">
       <span>COASTAL SPORTS<br><small>CHAMPIONSHIP · TN &amp; PUDUCHERRY</small></span>
     </div>
     <div class="nav-links" id="navLinks">
@@ -666,6 +714,10 @@
       <button class="link-btn" data-scroll="categories">Categories</button>
       <button class="link-btn" data-scroll="pledge">Pledge</button>
       <button class="btn btn-gold" id="navRegisterBtn">Register</button>
+    </div>
+    <div class="lang-toggle" role="group" aria-label="Language / மொழி">
+      <button type="button" data-lang="en" aria-pressed="true">EN</button>
+      <button type="button" data-lang="ta" aria-pressed="false" lang="ta">தமிழ்</button>
     </div>
   </div>
 </nav>
@@ -676,7 +728,10 @@
   <header class="hero">
     <div class="wrap">
       <div>
-        <img class="hero-logo" src="images/logo.jpg" alt="Coastal Sports Championship logo">
+        <div class="hero-logos">
+          <img class="hero-logo" src="images/logo.jpg" alt="Coastal Sports Championship logo">
+          <span class="cafe-chip"><img src="images/cafe-logo-horizontal.png" alt="CAFE — Coastal Area Fisherman Empowerment Trust logo"></span>
+        </div>
         <div class="hero-eyebrow">Tamil Nadu &amp; Puducherry · Coastal Villages</div>
         <h1>COASTAL SPORTS<br>CHAMPIONSHIP<span>.</span></h1>
         <p class="sub">A championship built for India's fishing-community youth — six sports, three age categories, and <span class="accent-italic">one shot at the finals</span>, spanning 608 villages along the coast.</p>
@@ -956,9 +1011,9 @@
                     <label for="gender">Gender <span class="req">*</span></label>
                     <select id="gender" required>
                       <option value="">Select</option>
-                      <option>Male</option>
-                      <option>Female</option>
-                      <option>Other</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                      <option value="Other">Other</option>
                     </select>
                   </div>
                 </div>
@@ -982,11 +1037,11 @@
                     <label for="cluster">Cluster <span class="req">*</span></label>
                     <select id="cluster" required>
                       <option value="">Select cluster</option>
-                      <option>Ramanathapuram</option>
-                      <option>Nagapattinam</option>
-                      <option>Puducherry</option>
-                      <option>Chennai</option>
-                      <option>Thiruvallur</option>
+                      <option value="Ramanathapuram">Ramanathapuram</option>
+                      <option value="Nagapattinam">Nagapattinam</option>
+                      <option value="Puducherry">Puducherry</option>
+                      <option value="Chennai">Chennai</option>
+                      <option value="Thiruvallur">Thiruvallur</option>
                     </select>
                   </div>
                   <div class="field">
@@ -1023,10 +1078,6 @@
         </div>
 
         <div class="reg-side">
-          <div class="side-card side-stat">
-            <div class="n" id="regCount">—</div>
-            <div class="l">Entries received so far</div>
-          </div>
           <div class="side-card">
             <h3>Before you register</h3>
             <ul>
@@ -1053,6 +1104,10 @@
       <div>
         <div class="footer-brand">Coastal Sports Championship</div>
         <p>A championship for fishing-community youth across Tamil Nadu &amp; Puducherry — 608 villages, 5 clusters, 6 sports, 3 age categories.</p>
+        <div class="footer-org">
+          <span class="lbl">Organised by</span>
+          <span class="cafe-chip"><img src="images/cafe-logo-stacked.png" alt="CAFE — Coastal Area Fisherman Empowerment Trust logo" loading="lazy"></span>
+        </div>
       </div>
       <div>
         <h4>Clusters</h4>
@@ -1082,6 +1137,222 @@
 
 <script>
 (function(){
+  // ---------- Language (English / Tamil) ----------
+  var TA = {
+ "COASTAL SPORTS": "கடலோர விளையாட்டு",
+ "CHAMPIONSHIP · TN & PUDUCHERRY": "சாம்பியன்ஷிப் · தமிழ்நாடு & புதுச்சேரி",
+ "About": "எங்களைப் பற்றி",
+ "Events": "போட்டிகள்",
+ "Categories": "பிரிவுகள்",
+ "Pledge": "உறுதிமொழி",
+ "Register": "பதிவு செய்",
+ "Tamil Nadu & Puducherry · Coastal Villages": "தமிழ்நாடு & புதுச்சேரி · கடலோர கிராமங்கள்",
+ "CHAMPIONSHIP": "சாம்பியன்ஷிப்",
+ "A championship built for India's fishing-community youth — six sports, three age categories, and": "இந்தியாவின் மீனவ சமூக இளைஞர்களுக்காக உருவாக்கப்பட்ட சாம்பியன்ஷிப் — ஆறு விளையாட்டுகள், மூன்று வயது பிரிவுகள், மற்றும்",
+ "one shot at the finals": "இறுதிப் போட்டிக்கான ஒரு வாய்ப்பு",
+ ", spanning 608 villages along the coast.": ", கடற்கரையோரம் 608 கிராமங்களில் பரவியுள்ளது.",
+ "\"Healthy Youth – Strong Coast – Strong Nation\"": "\"ஆரோக்கியமான இளைஞர்கள் – வலுவான கடற்கரை – வலுவான தேசம்\"",
+ "Register your entry": "உங்கள் பதிவைச் செய்யுங்கள்",
+ "See the events": "போட்டிகளைப் பாருங்கள்",
+ "Regional clusters": "பிராந்திய கிளஸ்டர்கள்",
+ "Sports": "விளையாட்டுகள்",
+ "Age categories": "வயது பிரிவுகள்",
+ "608 villages": "608 கிராமங்கள்",
+ "along the Tamil Nadu & Puducherry coast": "தமிழ்நாடு & புதுச்சேரி கடற்கரையோரம்",
+ "WHY THIS CHAMPIONSHIP": "ஏன் இந்த சாம்பியன்ஷிப்",
+ "Built around the coast,": "கடற்கரையை மையமாகக் கொண்டது,",
+ "for the coast": "கடற்கரைக்காகவே",
+ "Every match, cluster and category is designed around one goal: giving fishing-community youth a real stage to compete on.": "ஒவ்வொரு போட்டியும், கிளஸ்டரும், பிரிவும் ஒரே இலக்கை நோக்கி வடிவமைக்கப்பட்டுள்ளன: மீனவ சமூக இளைஞர்களுக்குப் போட்டியிட ஒரு உண்மையான மேடையை அளிப்பது.",
+ "Promote sports among coastal youth": "கடலோர இளைஞர்களிடையே விளையாட்டை ஊக்குவித்தல்",
+ "Structured, well-organised competition brought directly into 608 coastal villages.": "608 கடலோர கிராமங்களுக்கே நேரடியாகக் கொண்டுவரப்படும் முறையான, சிறப்பாக ஒருங்கிணைக்கப்பட்ட போட்டிகள்.",
+ "Identify talent": "திறமைகளைக் கண்டறிதல்",
+ "A group-to-finals format that surfaces the strongest players and teams from every cluster.": "ஒவ்வொரு கிளஸ்டரிலிருந்தும் சிறந்த வீரர்களையும் அணிகளையும் வெளிக்கொணரும், குழு நிலையிலிருந்து இறுதிப் போட்டி வரையிலான அமைப்பு.",
+ "Strengthen coastal communities": "கடலோர சமூகங்களை வலுப்படுத்துதல்",
+ "A shared championship that brings villages, clusters and regions together around sport.": "கிராமங்களையும் கிளஸ்டர்களையும் பகுதிகளையும் விளையாட்டின் மூலம் ஒன்றிணைக்கும் பொதுவான சாம்பியன்ஷிப்.",
+ "THE FORMAT": "போட்டி அமைப்பு",
+ "Six sports,": "ஆறு விளையாட்டுகள்,",
+ "three categories": "மூன்று பிரிவுகள்",
+ "Three team sports and two individual sports are each contested by every age category. Turf Cricket runs as one open bracket for all ages.": "மூன்று குழு விளையாட்டுகளும் இரண்டு தனிநபர் விளையாட்டுகளும் ஒவ்வொரு வயது பிரிவிலும் நடைபெறும். டர்ஃப் கிரிக்கெட் அனைத்து வயதினருக்குமான ஒரே திறந்த பிரிவாக நடைபெறும்.",
+ "608 VILLAGES · ONE STAGE": "608 கிராமங்கள் · ஒரே மேடை",
+ "Every group has a champion in the making": "ஒவ்வொரு குழுவிலும் ஒரு சாம்பியன் உருவாகிக்கொண்டிருக்கிறார்",
+ "Team events": "குழுப் போட்டிகள்",
+ "Junior · Youth · Senior Youth": "ஜூனியர் · இளையோர் · மூத்த இளையோர்",
+ "Volleyball": "வாலிபால்",
+ "Six-a-side matches at the village-group stage, narrowing down to one qualifier per group.": "கிராம குழு நிலையில் ஆறு பேர் கொண்ட அணிகளின் ஆட்டங்கள்; ஒவ்வொரு குழுவிலிருந்தும் ஒரு அணி தகுதி பெறும்.",
+ "Team": "குழு",
+ "All 3 categories": "மூன்று பிரிவுகளும்",
+ "Kabaddi": "கபடி",
+ "A coastal favourite — raid-based rounds run through the same group and cluster structure.": "கடலோரப் பகுதிகளின் விருப்பமான விளையாட்டு — அதே குழு மற்றும் கிளஸ்டர் அமைப்பில் ரெய்டு அடிப்படையிலான சுற்றுகள் நடைபெறும்.",
+ "Kho-Kho": "கோ-கோ",
+ "Fast-paced chasing and dodging, run in groups within each of the five clusters.": "வேகமான துரத்தலும் தப்பித்தலும் கொண்ட ஆட்டம்; ஐந்து கிளஸ்டர்களிலும் குழுக்களாக நடைபெறும்.",
+ "Individual events": "தனிநபர் போட்டிகள்",
+ "Yogasana": "யோகாசனம்",
+ "Judged individually on form and control, scored separately within each age category.": "உடல் அமைப்பு மற்றும் கட்டுப்பாட்டின் அடிப்படையில் தனித்தனியாக மதிப்பிடப்படும்; ஒவ்வொரு வயது பிரிவிலும் தனியாக மதிப்பெண் வழங்கப்படும்.",
+ "Individual": "தனிநபர்",
+ "Silambam": "சிலம்பம்",
+ "Traditional Tamil stick-martial-art, contested one-on-one through to the cluster final.": "பாரம்பரிய தமிழ் கம்பு சண்டைக் கலை; கிளஸ்டர் இறுதிப் போட்டி வரை நேருக்கு நேர் போட்டி நடைபெறும்.",
+ "Turf Cricket": "டர்ஃப் கிரிக்கெட்",
+ "One open bracket across all age categories — everyone competes together.": "அனைத்து வயது பிரிவினருக்குமான ஒரே திறந்த பிரிவு — அனைவரும் ஒன்றாகப் போட்டியிடுவர்.",
+ "OPEN FOR ALL": "அனைவருக்கும் திறந்தது",
+ "AGE CATEGORIES": "வயது பிரிவுகள்",
+ "Three brackets, one championship": "மூன்று பிரிவுகள், ஒரே சாம்பியன்ஷிப்",
+ "Team and individual events run separately within each bracket. Turf Cricket is the one event open across all three.": "குழு மற்றும் தனிநபர் போட்டிகள் ஒவ்வொரு பிரிவிலும் தனித்தனியாக நடைபெறும். மூன்று பிரிவுகளுக்கும் திறந்திருக்கும் ஒரே போட்டி டர்ஃப் கிரிக்கெட்.",
+ "Junior": "ஜூனியர்",
+ "Youth": "இளையோர்",
+ "Senior Youth": "மூத்த இளையோர்",
+ "Entry point for the championship's youngest coastal athletes.": "சாம்பியன்ஷிப்பின் இளைய கடலோர விளையாட்டு வீரர்களுக்கான தொடக்கப் பிரிவு.",
+ "The core competitive bracket across all six sports.": "ஆறு விளையாட்டுகளிலும் முக்கியமான போட்டிப் பிரிவு.",
+ "For experienced players carrying the sport in their community.": "தங்கள் சமூகத்தில் விளையாட்டை முன்னெடுத்துச் செல்லும் அனுபவமிக்க வீரர்களுக்கு.",
+ "PATH TO THE FINALS": "இறுதிப் போட்டிக்கான பாதை",
+ "From village group to championship final": "கிராம குழுவிலிருந்து சாம்பியன்ஷிப் இறுதிப் போட்டி வரை",
+ "Every cluster runs its own group stage. One winner comes out of every group, and all group winners meet at the finals.": "ஒவ்வொரு கிளஸ்டரும் தனது குழு நிலைப் போட்டிகளை நடத்தும். ஒவ்வொரு குழுவிலிருந்தும் ஒரு வெற்றியாளர் தேர்வாகி, அனைத்து குழு வெற்றியாளர்களும் இறுதிப் போட்டியில் மோதுவர்.",
+ "CLUSTER LEVEL — 5 CLUSTERS, 12 GROUPS": "கிளஸ்டர் நிலை — 5 கிளஸ்டர்கள், 12 குழுக்கள்",
+ "Ramanathapuram": "ராமநாதபுரம்",
+ "Nagapattinam": "நாகப்பட்டினம்",
+ "Puducherry": "புதுச்சேரி",
+ "Chennai": "சென்னை",
+ "Thiruvallur": "திருவள்ளூர்",
+ "Groups A · B · C": "குழுக்கள் A · B · C",
+ "Groups A · B": "குழுக்கள் A · B",
+ "One qualifier per group": "ஒரு குழுவுக்கு ஒரு தகுதி பெறுபவர்",
+ "CHAMPIONSHIP FINALS — ALL GROUP WINNERS": "சாம்பியன்ஷிப் இறுதிப் போட்டி — அனைத்து குழு வெற்றியாளர்கள்",
+ "🥇 1st Prize": "🥇 முதல் பரிசு",
+ "🥈 2nd Prize": "🥈 இரண்டாம் பரிசு",
+ "🥉 3rd Prize": "🥉 மூன்றாம் பரிசு",
+ "🏅 4th Prize": "🏅 நான்காம் பரிசு",
+ "COASTAL IDENTITY": "கடலோர அடையாளம்",
+ "Every participant takes": "ஒவ்வொரு பங்கேற்பாளரும் எடுக்கும்",
+ "the pledge": "உறுதிமொழி",
+ "Before stepping onto the field, every athlete commits to five things that matter beyond the scoreboard.": "களத்தில் இறங்குவதற்கு முன், ஒவ்வொரு வீரரும் மதிப்பெண்ணுக்கு அப்பாற்பட்ட ஐந்து விஷயங்களுக்கு உறுதியளிக்கிறார்.",
+ "Marine Conservation": "கடல் வளப் பாதுகாப்பு",
+ "Fishermen Welfare": "மீனவர் நலன்",
+ "Coastal Cleanliness": "கடற்கரைத் தூய்மை",
+ "Drug-free Youth": "போதையற்ற இளைஞர்கள்",
+ "National Unity": "தேசிய ஒருமைப்பாடு",
+ "REGISTRATION": "பதிவு",
+ "Register for the Championship": "சாம்பியன்ஷிப்பிற்குப் பதிவு செய்யுங்கள்",
+ "Enter as a team for Volleyball, Kabaddi, Kho-Kho or the open-category Turf Cricket, or as an individual for Yogasana or Silambam.": "வாலிபால், கபடி, கோ-கோ அல்லது அனைவருக்குமான டர்ஃப் கிரிக்கெட்டிற்கு குழுவாக, அல்லது யோகாசனம் அல்லது சிலம்பத்திற்கு தனிநபராகப் பதிவு செய்யுங்கள்.",
+ "Entry form": "பதிவுப் படிவம்",
+ "Fields marked": "கட்டாய புலங்கள்",
+ "are required.": "எனக் குறிக்கப்பட்டுள்ளன.",
+ "Please check the highlighted fields before submitting.": "சமர்ப்பிக்கும் முன் குறிக்கப்பட்ட புலங்களைச் சரிபார்க்கவும்.",
+ "Entry type": "பதிவு வகை",
+ "Team event": "குழுப் போட்டி",
+ "Volleyball, Kabaddi, Kho-Kho or Turf Cricket": "வாலிபால், கபடி, கோ-கோ அல்லது டர்ஃப் கிரிக்கெட்",
+ "Individual event": "தனிநபர் போட்டி",
+ "Yogasana or Silambam": "யோகாசனம் அல்லது சிலம்பம்",
+ "Event": "போட்டி",
+ "Choose your event": "உங்கள் போட்டியைத் தேர்ந்தெடுக்கவும்",
+ "Team name": "அணியின் பெயர்",
+ "Number of players": "வீரர்களின் எண்ணிக்கை",
+ "Participant / captain details": "பங்கேற்பாளர் / அணித் தலைவர் விவரங்கள்",
+ "Full name": "முழுப் பெயர்",
+ "Gender": "பாலினம்",
+ "Select": "தேர்ந்தெடுக்கவும்",
+ "Male": "ஆண்",
+ "Female": "பெண்",
+ "Other": "மற்றவை",
+ "Age": "வயது",
+ "Phone number": "தொலைபேசி எண்",
+ "Village & cluster": "கிராமம் & கிளஸ்டர்",
+ "Cluster": "கிளஸ்டர்",
+ "Select cluster": "கிளஸ்டரைத் தேர்ந்தெடுக்கவும்",
+ "Village": "கிராமம்",
+ "Emergency contact number": "அவசரத் தொடர்பு எண்",
+ "I take the Coastal Athlete's Pledge — committing to marine conservation, fishermen welfare, coastal cleanliness, staying drug-free, and national unity.": "நான் கடலோர வீரரின் உறுதிமொழியை ஏற்கிறேன் — கடல் வளப் பாதுகாப்பு, மீனவர் நலன், கடற்கரைத் தூய்மை, போதையற்ற வாழ்க்கை மற்றும் தேசிய ஒருமைப்பாட்டிற்கு உறுதியளிக்கிறேன்.",
+ "Submit registration": "பதிவைச் சமர்ப்பிக்கவும்",
+ "Registration received": "பதிவு பெறப்பட்டது",
+ "Keep your registration ID — the cluster coordinator will use it to confirm your group and schedule.": "உங்கள் பதிவு எண்ணைப் பத்திரமாக வைத்திருங்கள் — உங்கள் குழு மற்றும் அட்டவணையை உறுதிப்படுத்த கிளஸ்டர் ஒருங்கிணைப்பாளர் இதைப் பயன்படுத்துவார்.",
+ "Register another entry": "மற்றொரு பதிவைச் செய்யுங்கள்",
+ "Before you register": "பதிவு செய்வதற்கு முன்",
+ "Team events need a team name and a captain's contact details.": "குழுப் போட்டிகளுக்கு அணியின் பெயரும் அணித் தலைவரின் தொடர்பு விவரங்களும் தேவை.",
+ "Individual events (Yogasana, Silambam) register one athlete at a time.": "தனிநபர் போட்டிகளில் (யோகாசனம், சிலம்பம்) ஒரு நேரத்தில் ஒரு வீரரே பதிவு செய்யலாம்.",
+ "Turf Cricket is a single open bracket across all three age categories.": "டர்ஃப் கிரிக்கெட் மூன்று வயது பிரிவுகளுக்குமான ஒரே திறந்த பிரிவு.",
+ "Your age determines your category: Junior 14–18, Youth 19–25, Senior Youth 26–35.": "உங்கள் வயதே உங்கள் பிரிவைத் தீர்மானிக்கும்: ஜூனியர் 14–18, இளையோர் 19–25, மூத்த இளையோர் 26–35.",
+ "Need help?": "உதவி தேவையா?",
+ "Contact your cluster coordinator or reach the organising committee for registration support.": "பதிவு தொடர்பான உதவிக்கு உங்கள் கிளஸ்டர் ஒருங்கிணைப்பாளரையோ ஏற்பாட்டுக் குழுவையோ தொடர்பு கொள்ளுங்கள்.",
+ "Coastal Sports Championship": "கடலோர விளையாட்டு சாம்பியன்ஷிப்",
+ "A championship for fishing-community youth across Tamil Nadu & Puducherry — 608 villages, 5 clusters, 6 sports, 3 age categories.": "தமிழ்நாடு & புதுச்சேரி முழுவதும் உள்ள மீனவ சமூக இளைஞர்களுக்கான சாம்பியன்ஷிப் — 608 கிராமங்கள், 5 கிளஸ்டர்கள், 6 விளையாட்டுகள், 3 வயது பிரிவுகள்.",
+ "Clusters": "கிளஸ்டர்கள்",
+ "Championship": "சாம்பியன்ஷிப்",
+ "Registration": "பதிவு",
+ "Coastal Sports Championship · Tamil Nadu & Puducherry": "கடலோர விளையாட்டு சாம்பியன்ஷிப் · தமிழ்நாடு & புதுச்சேரி",
+ "Organised by": "ஏற்பாடு",
+ "Coastal Sports Championship logo": "கடலோர விளையாட்டு சாம்பியன்ஷிப் சின்னம்",
+ "CAFE — Coastal Area Fisherman Empowerment Trust logo": "CAFE — கடலோரப் பகுதி மீனவர் அதிகாரமளிப்பு அறக்கட்டளை சின்னம்",
+ "Fishermen pushing their boat into the surf at sunrise on the Tamil Nadu coast": "தமிழ்நாடு கடற்கரையில் சூரிய உதயத்தில் மீனவர்கள் தங்கள் படகை அலையில் தள்ளுகின்றனர்",
+ "A pack of young athletes sprinting along the shoreline": "கடற்கரையோரம் ஓடும் இளம் வீரர்களின் கூட்டம்",
+ "Volunteers rescuing a sea turtle and cleaning the beach at sunset": "மாலை வேளையில் கடல் ஆமையைக் காப்பாற்றி கடற்கரையைத் தூய்மைப்படுத்தும் தன்னார்வலர்கள்",
+ "Welfare volunteer meeting fishermen on the beach to discuss healthcare, education and insurance support": "சுகாதாரம், கல்வி, காப்பீட்டு உதவி குறித்து கடற்கரையில் மீனவர்களைச் சந்திக்கும் நலப் பணியாளர்",
+ "Clean Coast Crew volunteers collecting plastic and fishing-net waste from the beach": "கடற்கரையில் பிளாஸ்டிக் மற்றும் மீன்பிடி வலைக் கழிவுகளைச் சேகரிக்கும் தூய்மைக் கடற்கரைத் தன்னார்வலர்கள்",
+ "Young people on a fishing beach taking the drug-free youth pledge": "மீனவ கடற்கரையில் போதையற்ற இளைஞர் உறுதிமொழி எடுக்கும் இளைஞர்கள்",
+ "A group of friends jumping together in celebration at sunset": "மாலை வேளையில் மகிழ்ச்சியுடன் ஒன்றாகக் குதிக்கும் நண்பர்கள் குழு",
+ "e.g. Ramanathapuram Wave Riders": "எ.கா. ராமநாதபுரம் அலை வீரர்கள்",
+ "e.g. 12": "எ.கா. 12",
+ "10-digit mobile number": "10 இலக்க கைபேசி எண்",
+ "A second contact number, if different": "வேறு எண் இருந்தால், இரண்டாவது தொடர்பு எண்",
+ "Turf Cricket (Open Category — all ages)": "டர்ஃப் கிரிக்கெட் (திறந்த பிரிவு — அனைத்து வயதினர்)",
+ "Junior (14–18)": "ஜூனியர் (14–18)",
+ "Youth (19–25)": "இளையோர் (19–25)",
+ "Senior Youth (26–35)": "மூத்த இளையோர் (26–35)",
+ "Category:": "பிரிவு:",
+ "Category": "பிரிவு",
+ "Name": "பெயர்",
+ "This championship runs Junior (14–18) to Senior Youth (26–35). Please check the age entered.": "இந்த சாம்பியன்ஷிப் ஜூனியர் (14–18) முதல் மூத்த இளையோர் (26–35) வரை நடைபெறுகிறது. உள்ளிட்ட வயதைச் சரிபார்க்கவும்.",
+ "We could not save your registration just now. Please try again.": "இப்போது உங்கள் பதிவைச் சேமிக்க முடியவில்லை. மீண்டும் முயற்சிக்கவும்.",
+ "Saving your registration…": "உங்கள் பதிவு சேமிக்கப்படுகிறது…",
+ "Coastal Sports Championship — Tamil Nadu & Puducherry": "கடலோர விளையாட்டு சாம்பியன்ஷிப் — தமிழ்நாடு & புதுச்சேரி"
+};
+  var lang = 'en';
+  function t(s){ return (lang === 'ta' && TA[s]) || s; }
+  // Text whose wording JS sets itself: remember the English key so a language switch can redraw it.
+  function setText(el, key){ el.setAttribute('data-k', key); el.textContent = t(key); }
+  function clearText(el){ el.removeAttribute('data-k'); el.textContent = ''; }
+
+  var i18nTexts = [], i18nAttrs = [];
+  (function collect(){
+    var walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
+      acceptNode: function(n){
+        var p = n.parentNode && n.parentNode.nodeName;
+        if(p === 'SCRIPT' || p === 'STYLE') return NodeFilter.FILTER_REJECT;
+        return NodeFilter.FILTER_ACCEPT;
+      }
+    });
+    var n;
+    while((n = walker.nextNode())){
+      var key = n.nodeValue.replace(/\s+/g, ' ').trim();
+      if(key && TA[key]){
+        var m = /^(\s*)[\s\S]*?(\s*)$/.exec(n.nodeValue);
+        i18nTexts.push({node:n, orig:n.nodeValue, key:key, lead:m[1], trail:m[2]});
+      }
+    }
+    document.querySelectorAll('[alt],[placeholder]').forEach(function(el){
+      ['alt','placeholder'].forEach(function(a){
+        var v = el.getAttribute(a);
+        if(v && TA[v]) i18nAttrs.push({el:el, attr:a, orig:v});
+      });
+    });
+  })();
+
+  function applyLang(l, persist){
+    lang = (l === 'ta') ? 'ta' : 'en';
+    document.documentElement.lang = lang;
+    i18nTexts.forEach(function(r){
+      r.node.nodeValue = lang === 'ta' ? r.lead + TA[r.key] + r.trail : r.orig;
+    });
+    i18nAttrs.forEach(function(r){ r.el.setAttribute(r.attr, t(r.orig)); });
+    document.querySelectorAll('[data-k]').forEach(function(el){ el.textContent = t(el.getAttribute('data-k')); });
+    document.title = t('Coastal Sports Championship — Tamil Nadu & Puducherry');
+    document.querySelectorAll('.lang-toggle button').forEach(function(b){
+      b.setAttribute('aria-pressed', b.getAttribute('data-lang') === lang ? 'true' : 'false');
+    });
+    if(typeof updateEventOptions === 'function'){ updateEventOptions(); renderReadout(); renderConfirmSummary(); }
+    if(persist){ try{ localStorage.setItem('lang', lang); }catch(e){} }
+  }
+  document.querySelectorAll('.lang-toggle button').forEach(function(b){
+    b.addEventListener('click', function(){ applyLang(b.getAttribute('data-lang'), true); });
+  });
+
   var homeView = document.getElementById('view-home');
   var regView = document.getElementById('view-register');
 
@@ -1108,7 +1379,6 @@
   }
   function showRegister(){
     switchView(homeView, regView);
-    refreshCount();
   }
 
   document.getElementById('navRegisterBtn').addEventListener('click', showRegister);
@@ -1118,8 +1388,9 @@
     document.getElementById('confirmPanel').classList.remove('show');
     document.getElementById('formCard').style.display = '';
     document.getElementById('regForm').reset();
+    lastEntry = null;
+    clearText(readout); readout.classList.remove('show');
     updateEventOptions();
-    refreshCount();
   });
 
   document.querySelectorAll('[data-scroll]').forEach(function(btn){
@@ -1150,12 +1421,14 @@
 
   function updateEventOptions(){
     var type = document.querySelector('input[name="entryType"]:checked').value;
+    var prev = eventSelect.value;
     eventSelect.innerHTML = '';
     eventsByType[type].forEach(function(ev){
       var opt = document.createElement('option');
-      opt.value = ev; opt.textContent = ev;
+      opt.value = ev; opt.textContent = t(ev);
       eventSelect.appendChild(opt);
     });
+    if(prev) eventSelect.value = prev;
     var isTeam = type === 'team';
     teamNameField.style.display = isTeam ? '' : 'none';
     squadSizeField.style.display = isTeam ? '' : 'none';
@@ -1175,33 +1448,21 @@
     if(age >= 26 && age <= 35) return 'Senior Youth (26–35)';
     return null;
   }
-  ageInput.addEventListener('input', function(){
+  function renderReadout(){
     var age = parseInt(ageInput.value, 10);
     readout.classList.remove('warn');
-    if(!age){ readout.classList.remove('show'); return; }
+    if(!age){ clearText(readout); readout.classList.remove('show'); return; }
     var cat = categoryForAge(age);
     if(cat){
-      readout.textContent = 'Category: ' + cat;
+      readout.removeAttribute('data-k');
+      readout.textContent = t('Category:') + ' ' + t(cat);
     } else {
-      readout.textContent = 'This championship runs Junior (14–18) to Senior Youth (26–35). Please check the age entered.';
+      setText(readout, 'This championship runs Junior (14–18) to Senior Youth (26–35). Please check the age entered.');
       readout.classList.add('warn');
     }
     readout.classList.add('show');
-  });
-
-  // ---------- Storage-backed registration count ----------
-  var STORAGE_KEY = 'registrations';
-  function refreshCount(){
-    var el = document.getElementById('regCount');
-    if(!window.storage){ el.textContent = '—'; return; }
-    window.storage.get(STORAGE_KEY, true).then(function(res){
-      var list = res && res.value ? JSON.parse(res.value) : [];
-      el.textContent = list.length;
-    }).catch(function(){
-      el.textContent = '0';
-    });
   }
-  refreshCount();
+  ageInput.addEventListener('input', renderReadout);
 
   // ---------- Form submit ----------
   // Apps Script web app URL that appends rows to the registration sheet (see apps-script/README.md)
@@ -1214,6 +1475,7 @@
   form.addEventListener('submit', function(e){
     e.preventDefault();
     formError.classList.remove('show');
+    formError.removeAttribute('data-k');
 
     var type = document.querySelector('input[name="entryType"]:checked').value;
     var event = eventSelect.value;
@@ -1235,6 +1497,7 @@
     if(phone && !/^[0-9+ ]{7,15}$/.test(phone)) valid = false;
 
     if(!valid){
+      setText(formError, 'Please check the highlighted fields before submitting.');
       formError.classList.add('show');
       formError.scrollIntoView({behavior:'smooth', block:'center'});
       return;
@@ -1258,17 +1521,17 @@
     };
 
     submitBtn.disabled = true;
-    submitStatus.textContent = 'Saving your registration…';
+    setText(submitStatus, 'Saving your registration…');
 
     var fail = function(){
       submitBtn.disabled = false;
-      submitStatus.textContent = '';
-      formError.textContent = 'We could not save your registration just now. Please try again.';
+      clearText(submitStatus);
+      setText(formError, 'We could not save your registration just now. Please try again.');
       formError.classList.add('show');
     };
     var done = function(){
       submitBtn.disabled = false;
-      submitStatus.textContent = '';
+      clearText(submitStatus);
       showConfirmation(entry);
     };
     var save = function(){
@@ -1278,39 +1541,42 @@
         method: 'POST', mode: 'no-cors',
         headers: {'Content-Type': 'text/plain;charset=utf-8'},
         body: JSON.stringify(entry)
-      }).then(function(){
-        done();
-        if(window.storage){
-          window.storage.get(STORAGE_KEY, true).then(function(res){
-            var list = res && res.value ? JSON.parse(res.value) : [];
-            list.push(entry);
-            return window.storage.set(STORAGE_KEY, JSON.stringify(list), true);
-          }).then(refreshCount).catch(function(){});
-        }
-      }).catch(fail);
+      }).then(done).catch(fail);
     };
     save();
   });
 
-  function showConfirmation(entry){
-    document.getElementById('formCard').style.display = 'none';
-    var panel = document.getElementById('confirmPanel');
-    document.getElementById('confirmId').textContent = entry.id;
+  var lastEntry = null;
+  function renderConfirmSummary(){
+    if(!lastEntry) return;
+    var entry = lastEntry;
     var summary = document.getElementById('confirmSummary');
     summary.innerHTML = '';
     var rows = [
-      ['Name', entry.fullName],
-      ['Event', entry.event],
-      ['Category', entry.category],
-      ['Cluster', entry.cluster],
-      ['Village', entry.village]
+      ['Name', entry.fullName, false],
+      ['Event', entry.event, true],
+      ['Category', entry.category, true],
+      ['Cluster', entry.cluster, true],
+      ['Village', entry.village, false]
     ];
-    if(entry.teamName) rows.splice(2, 0, ['Team', entry.teamName]);
+    if(entry.teamName) rows.splice(2, 0, ['Team', entry.teamName, false]);
     rows.forEach(function(r){
       var row = document.createElement('div');
-      row.innerHTML = '<span>' + r[0] + '</span><span>' + r[1] + '</span>';
+      var label = document.createElement('span');
+      var value = document.createElement('span');
+      setText(label, r[0]);
+      if(r[2]) setText(value, r[1]); else value.textContent = r[1];
+      row.appendChild(label); row.appendChild(value);
       summary.appendChild(row);
     });
+  }
+
+  function showConfirmation(entry){
+    lastEntry = entry;
+    document.getElementById('formCard').style.display = 'none';
+    var panel = document.getElementById('confirmPanel');
+    document.getElementById('confirmId').textContent = entry.id;
+    renderConfirmSummary();
     panel.classList.add('show');
     // restart the checkmark draw animation on every submission
     var checkPath = panel.querySelector('.check-draw path');
@@ -1385,6 +1651,10 @@
     });
   }
   setTimeout(animateCounters, 250);
+
+  var savedLang = null;
+  try{ savedLang = localStorage.getItem('lang'); }catch(e){}
+  if(savedLang === 'ta') applyLang('ta', false);
 })();
 </script>
 

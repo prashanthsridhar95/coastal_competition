@@ -144,8 +144,8 @@
     background-size:100% 100%, 112% auto;
     color:var(--white);
     position:relative;
-    margin-top:-78px;
-    padding:150px 0 0;
+    margin-top:-92px;
+    padding:164px 0 0;
     overflow:hidden;
     min-height:680px;
   }
@@ -424,13 +424,13 @@
   /* ---------- REGISTER PAGE ---------- */
   .register-hero{
     position:relative; overflow:hidden;
-    margin-top:-78px;
+    margin-top:-92px;
     background-image:
       linear-gradient(165deg, rgba(8,20,33,0.92), rgba(11,42,67,0.86)),
       url('images/sunset-waves.jpg');
     background-position:center, center 60%;
     background-size:100% 100%, 112% auto;
-    color:var(--white); padding:140px 0 64px;
+    color:var(--white); padding:154px 0 64px;
   }
   .register-hero h1{color:var(--white); font-size:clamp(2rem,4vw,2.9rem);}
   .register-hero p{color:rgba(255,255,255,0.78); max-width:56ch; margin-top:12px;}
@@ -661,7 +661,14 @@
   .lang-toggle button[aria-pressed="true"]{background:var(--white); color:var(--navy);}
   .lang-toggle button:not([aria-pressed="true"]):hover{color:var(--white);}
   .lang-toggle button:focus-visible{outline:2px solid var(--gold); outline-offset:-2px;}
-  .nav-links{margin-left:auto;}
+  .nav-links{margin-left:auto; flex-wrap:nowrap; gap:20px; white-space:nowrap;}
+  .site-nav .wrap{flex-wrap:nowrap;}
+  .brand{min-width:0;}
+  html[lang="ta"] .nav-links{gap:16px;}
+  html[lang="ta"] .nav-links button.link-btn{font-size:0.86rem;}
+  @media (max-width:1180px){
+    .brand small{display:none;}
+  }
 
   /* ---------- CAFE LOGO ---------- */
   .brand .mark.cafe{margin-left:2px;}

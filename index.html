@@ -666,12 +666,13 @@
   /* ---------- CAFE LOGO ---------- */
   .brand .mark.cafe{margin-left:2px;}
   .hero-logos{display:flex; align-items:center; flex-wrap:wrap; gap:16px; margin-bottom:26px;}
-  .hero-logos .hero-logo{margin-bottom:0;}
+  .hero-logos .hero-logo{margin-bottom:0; width:112px; height:112px;}
   .cafe-chip{
     background:#F6EFE4; border-radius:14px; padding:8px 12px; display:block;
     box-shadow:0 12px 30px rgba(0,0,0,0.3);
   }
-  .hero-logos .cafe-chip img{display:block; width:220px; height:auto;}
+  .hero-logos .cafe-chip{height:112px; box-sizing:border-box; display:flex; align-items:center;}
+  .hero-logos .cafe-chip img{display:block; height:100%; width:auto;}
   .footer-org{margin-top:22px;}
   .footer-org .lbl{display:block; font-size:0.72rem; letter-spacing:0.08em; text-transform:uppercase; color:var(--gold); font-weight:700; margin-bottom:8px;}
   .footer-org .cafe-chip{display:inline-block; box-shadow:none;}
@@ -694,7 +695,8 @@
   }
   @media (max-width:480px){
     .brand .mark.cafe, .brand small{display:none;}
-    .hero-logos .cafe-chip img{width:190px;}
+    .hero-logos .hero-logo{width:96px; height:96px;}
+    .hero-logos .cafe-chip{height:96px;}
   }
 </style>
 
